@@ -1,5 +1,10 @@
+---
+layout: site
+tittle: NEOMIND
+features: tittles
+author: kubulee
+---
 
-```xlsl
 
                  ┌──────────────┐
                  │  Sensory     │  ← Camera, LiDAR, IMU, Distance, Touch
@@ -26,9 +31,10 @@
 
 <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/434924d0-570c-4c38-adb1-22381e720655" />|
 
----
 
-# **🧠 NEUROBOT BLUEPRINT**
+
+---
+ tittle: 🧠 NEUROBOT BLUEPRINT**
 
 ## **1️⃣ Neural “Brain” Architecture**
 
@@ -53,9 +59,10 @@ We'll combine **neuromorphic principles** with AI/ML for practical robotics.
 
 ---
 
-## **2️⃣ Sensors (Perception System)**
 
-| Sensor Type                     | Purpose               | Notes                                   |
+## **2️⃣ Sensors (Perception System)**
+---
+| Sensor Type:                 | Purpose               | Notes                                |
 | ------------------------------- | --------------------- | --------------------------------------- |
 | Camera (RGB & depth)            | Vision                | Object detection, mapping, navigation   |
 | Microphone array                | Sound                 | Voice commands, environmental awareness |
@@ -64,7 +71,7 @@ We'll combine **neuromorphic principles** with AI/ML for practical robotics.
 | Pressure & tactile              | Touch feedback        | Grasping, detecting collisions          |
 | Temperature / gas sensors       | Environmental         | Safety / monitoring                     |
 
-> Sensors feed into the **Sensory Cortex Module**, which preprocesses inputs before the “brain” sees them.
+> Sensors: feed into the **Sensory Cortex Module**, which preprocesses inputs before the “brain” sees them.
 
 ---
 
