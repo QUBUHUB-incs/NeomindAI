@@ -1,7 +1,12 @@
+---
+tittle: MEOMIND
+features: 
+layouts: page
+---
+
+
 <h1>BRAIN</h1>
 
-
-------
 
 
 <h2>🧠 The Core  Engine </h2>
