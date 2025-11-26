@@ -1,5 +1,5 @@
 component {
-  this.name = "BrainAI";
+  this.name = "NeomindAI";
   this.sessionManagement = true;
   this.datasource = "brain_db";
 
