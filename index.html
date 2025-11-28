@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NeomindAI</title>
+<style>
+body {margin:0;font-family:sans-serif;background:#0d0d0d;color:#fff;}
+h2,h3{color:#00eaff;}
+pre{background:#111;padding:15px;border-radius:8px;overflow-x:auto;}
+.tab-btn{flex:1;padding:10px;background:#0d0d0d;color:#ccc;border:none;cursor:pointer;}
+.tab-btn.active{color:#0ff;}
+.tab-content{padding:20px;}
+</style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<!-- Paste sidebar here -->
+
+<div style="margin-left:240px;padding:20px;">
+  <h2>NeomindAI Overview</h2>
+  <p>NeomindAI is a next-generation cognitive engine that can analyze, predict, adapt, and evolve. Browse all folders using the sidebar to see code, diagrams, configs, and examples.</p>
+
+  <div class="neomind-tabs" style="margin-top:30px;">
+      <div style="display:flex;border-bottom:1px solid #222;">
+          <button class="tab-btn active" data-tab="overview">Overview</button>
+          <button class="tab-btn" data-tab="quickstart">Quickstart</button>
+      </div>
+      <div class="tab-content">
+          <div class="tab-panel" id="overview" style="display:block;">
+              <p>All NeomindAI folders are modular: boards, CFML configs, AI models, scripts, and pretraining datasets.</p>
+          </div>
+          <div class="tab-panel" id="quickstart" style="display:none;">
+              <pre>
+git clone https://github.com/QUBUHUB-incs/NeomindAI.git
+cd NeomindAI
+npm install
+npm run dev
+              </pre>
+          </div>
+      </div>
+  </div>
+</div>
+
+<script>
+const tabs = document.querySelectorAll('.tab-btn');
+const panels = document.querySelectorAll('.tab-panel');
+tabs.forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    tabs.forEach(b=>b.classList.remove('active'));
+    panels.forEach(p=>p.style.display='none');
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.tab).style.display='block';
+  });
+});
+</script>
+
+</body>
+</html>
