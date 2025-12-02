@@ -1,4 +1,4 @@
-  $ sudo yum install --setopt=tsflags= L-function L-function-devel Singular \
+$ sudo yum install --setopt=tsflags= L-function L-function-devel Singular \
         Singular-devel binutils boost-devel brial brial-devel bzip2 \
         bzip2-devel cddlib cddlib-devel cliquer cliquer-devel cmake curl \
         diffutils ecl eclib eclib-devel fflas-ffpack-devel findutils flex \
