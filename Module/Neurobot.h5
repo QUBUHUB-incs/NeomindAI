@@ -1,4 +1,4 @@
-// Initialize sensors 
+// Initialize sensors
 distance_sensor front
 temp_sensor environment
 camera vision
