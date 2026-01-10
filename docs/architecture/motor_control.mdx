@@ -1,0 +1,31 @@
+# Motor Control Layer
+
+Low-level motor execution is delegated to microcontrollers for real-time guarantees.
+
+## Design Principles
+- AI makes decisions
+- Microcontrollers execute actions
+- Feedback loops remain deterministic
+
+## Arduino Example
+
+```cpp
+#include <Servo.h>
+
+Servo leftMotor, rightMotor;
+
+void setup() {
+  leftMotor.attach(9);
+  rightMotor.attach(10);
+  Serial.begin(115200);
+}
+
+void loop() {
+  if (Serial.available()) {
+    String action = Serial.readStringUntil('\n');
+    if (action == "FORWARD") {
+      leftMotor.write(180);
+      rightMotor.write(0);
+    }
+  }
+}
