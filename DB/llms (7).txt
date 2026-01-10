@@ -1,0 +1,524 @@
+# Coolify
+
+> Open Source PaaS
+
+Self-host your own databases, services (like WordPress, Plausible Analytics, Ghost) and applications (like Next.js, Nuxt.js, Remix, SvelteKit) with ease.
+
+## Table of Contents
+
+### Get Started
+
+- [Introduction to Coolify](/docs/get-started/introduction.md): Coolify is an open-source self-hosted PaaS alternative to Vercel, Heroku, and Railway with unlimited deployments, no vendor lock-in, and free SSL.
+- [Installation](/docs/get-started/installation.md): Install Coolify self-hosted PaaS on Linux servers with automated Docker setup script, manual configuration, SSH access, and firewall setup.
+- [Coolify Cloud](/docs/get-started/cloud.md): Coolify Cloud is a fully managed PaaS service with zero maintenance, automatic scaling, daily backups, and email notifications.
+- [Usage](/docs/get-started/usage.md): Compare Coolify Cloud managed service starting at $5/month versus free self-hosted deployment with maintenance, support, and backup differences.
+- [Coolify Concepts](/docs/get-started/concepts.md): Learn core Coolify concepts including servers, resources, environments, projects, Docker containers, reverse proxy, and team management basics.
+- [coolLabs Team](/docs/get-started/team.md): Meet the international team developing Coolify including founder Andras Bacsai, core developers, community leads, and documentation maintainers.
+- [Support](/docs/get-started/support.md): Get Coolify support through Discord community with 13K+ members, direct email support for Cloud users, and core team developer assistance.
+- [Coolify Sponsors](/docs/get-started/sponsors.md): Meet the companies and organizations sponsoring Coolify development including Hetzner, Logto, Tolgee, and other technology partners.
+
+#### Installation
+
+- [Upgrading Coolify](/docs/get-started/upgrade.md): Upgrade self-hosted Coolify automatically, semi-automatically with UI notifications, or manually via terminal with version-specific installation.
+- [Downgrading Coolify](/docs/get-started/downgrade.md): Downgrade self-hosted Coolify to previous versions by disabling auto-update, using SSH terminal commands, and handling database compatibility risks.
+- [Uninstalling Coolify](/docs/get-started/uninstallation.md): Completely remove Coolify from your self-hosted server by stopping containers, deleting volumes, networks, data directories, and Docker images.
+
+#### Concepts
+
+- [Coolify UI Screenshots](/docs/get-started/screenshots.md): View screenshots of Coolify's user interface showing dashboard, deployment options, server management, and application configuration features.
+- [Coolify Tutorial videos](/docs/get-started/videos.md): Watch community video tutorials on Coolify self-hosted PaaS including installation, deployment, and complete walkthroughs for beginners.
+
+#### Contribute
+
+- [Contributing to Core Coolify](/docs/get-started/contribute/coolify.md): Contribute to Coolify open-source development with step-by-step setup guide, Docker environment, Spin commands, and pull request workflow.
+- [Add a new service template to Coolify](/docs/get-started/contribute/service.md): Add new service templates to Coolify using Docker Compose with magic environment variables, storage handling, and one-click deployment features.
+- [Contributing to Coolify Documentation](/docs/get-started/contribute/documentation.md): Contribute to Coolify docs with this guide covering repository setup, local development with Bun, image guidelines, and pull request workflow.
+
+### Applications
+
+- [Applications](/docs/applications.md): Deploy web applications on Coolify with Nixpacks, Docker, static sites, build packs, environment variables, and automated deployments.
+- [Build Packs](/docs/applications/build-packs/overview.md): Choose from Nixpacks, Static, Dockerfile, or Docker Compose build packs to create optimized Docker images for your application deployments.
+- [CI/CD with Git Providers](/docs/applications/ci-cd/introduction.md): Learn how Coolify applications integrate with Git providers for continuous deployment. Understand the difference between Git-based applications and Docker Compose services.
+
+#### Frameworks
+
+- [Django](/docs/applications/django.md): Deploy Django applications on Coolify with gunicorn, automatic builds, environment variables, and Python package management.
+- [Jekyll](/docs/applications/jekyll.md): Deploy Jekyll static sites on Coolify using Nixpacks or Dockerfile with Ruby, Nginx, and automated build processes.
+- [Laravel](/docs/applications/laravel.md): Deploy Laravel PHP applications on Coolify with Nixpacks, queue workers, scheduler, supervisor, database, and Redis integration.
+- [Phoenix](/docs/applications/phoenix.md): Deploy Phoenix framework applications on Coolify with Elixir/Erlang, Nixpacks, environment variables, and database integration.
+- [Ruby on Rails](/docs/applications/rails.md): Deploy Ruby on Rails applications on Coolify with database migrations, MVC pattern support, and automated deployment workflows.
+- [Symfony](/docs/applications/symfony.md): Deploy Symfony PHP applications on Coolify with Nixpacks, Doctrine migrations, database connections, and trusted proxy configuration.
+- [NextJS](/docs/applications/nextjs.md): Deploy Next.js applications on Coolify with server-side rendering, static builds, Nixpacks, or custom Dockerfile configurations.
+- [Vite](/docs/applications/vite.md): Deploy Vite applications on Coolify with TypeScript or JavaScript, Nixpacks build process, and static site generation.
+- [Vue](/docs/applications/vuejs.md): Deploy Vue.js applications on Coolify with server builds using Node/Express or static SPA builds with routing support.
+- [Nuxt](/docs/applications/nuxt.md): Deploy Nuxt applications on Coolify with server builds, static generation, and Nitro support using Nixpacks build configurations.
+- [SvelteKit](/docs/applications/svelte-kit.md): Deploy SvelteKit applications on Coolify with static builds using adapter-static or Node server builds with adapter-node.
+
+#### Build Packs
+
+- [Static Build Packs](/docs/applications/build-packs/static.md): Deploy static websites with Nginx web server using pre-built files from Git repositories, supporting Astro, Webstudio, and other static generators.
+- [Nixpacks Build Pack](/docs/applications/build-packs/nixpacks.md): Build applications with Nixpacks automatic buildpack detecting your codebase, generating Dockerfiles, and deploying static sites or dynamic apps.
+- [Dockerfile Build Pack](/docs/applications/build-packs/dockerfile.md): Build Docker images from your custom Dockerfile with Coolify supporting Git repositories, environment variables, and pre/post-deployment commands.
+- [Docker Compose Build Packs](/docs/applications/build-packs/docker-compose.md): Deploy multi-container applications with Docker Compose using custom domains, magic environment variables, storage volumes, and service networking.
+
+#### CI/CD
+
+- [Integration](/docs/applications/ci-cd/gitlab/integration.md): Connect GitLab repositories to Coolify with deploy keys, Gitlab container registry with deploy token, automatic webhooks, and merge request deployments for CI/CD automation
+- [Integration](/docs/applications/ci-cd/bitbucket/integration.md): Deploy Bitbucket repositories with Coolify using deploy keys, SSH authentication, and automated webhooks for commits and pull requests.
+- [Integration](/docs/applications/ci-cd/gitea/integration.md): Deploy Gitea repositories with Coolify using deploy keys, SSH authentication, and automated webhooks for commits and pull requests.
+- [Other Git Providers](/docs/applications/ci-cd/other-providers.md): Connect any Git provider to Coolify using deploy keys and webhooks for automatic deployments. Works with Gogs, Forgejo, and custom Git servers.
+
+##### Github
+
+- [Integration](/docs/applications/ci-cd/github/integration.md): Deploy public and private GitHub repositories with Coolify using GitHub App integration, deploy keys, or automated webhooks for commits and pull requests.
+- [Manually Setup GitHub App](/docs/applications/ci-cd/github/manually-setup-github-app.md): Manually configure GitHub App integration with Coolify including webhook setup, private key generation, permissions, and installation ID configuration.
+- [Move Between GitHub Apps](/docs/applications/ci-cd/github/move-between-github-apps.md): Migrate Coolify repositories between GitHub Apps when moving to new organizations with Git source updates and repository reconfiguration.
+- [GitHub Actions](/docs/applications/ci-cd/github/github-actions.md): Build and deploy Docker images to Coolify using GitHub Actions workflows with registry integration, API tokens, and automated webhook triggers.
+
+### Services
+
+- [Services](/docs/services/introduction.md): Deploy 200+ pre-configured open-source applications instantly with Coolify's one-click services, from development tools to databases.
+- [Overview](/docs/services/overview.md): Browse the complete directory of one-click services available in Coolify, including databases, development tools, and productivity apps.
+- [All Services](/docs/services/all.md): Complete directory of one-click services in Coolify including AI, analytics, databases, CMS, monitoring, and more.
+
+### Databases
+
+- [Introduction](/docs/databases.md): Deploy databases on Coolify with one-click setup for PostgreSQL, MySQL, MariaDB, MongoDB, Redis, KeyDB, DragonFly, and ClickHouse.
+
+#### Overview
+
+- [Database SSL](/docs/databases/ssl.md): Secure database connections on Coolify with SSL encryption, automatic certificate generation, and multiple SSL modes for enhanced security.
+- [Backups](/docs/databases/backups.md): Configure scheduled database backups for PostgreSQL, MySQL, MariaDB, and MongoDB with cron expressions and S3 storage integration.
+- [MySQL](/docs/databases/mysql.md): Deploy MySQL databases on Coolify with ACID compliance, replication, partitioning, full-text indexing, and automated backup features.
+- [MariaDB](/docs/databases/mariadb.md): Deploy MariaDB databases on Coolify with MySQL compatibility, enhanced performance, additional storage engines, and automated backups.
+- [PostgreSQL](/docs/databases/postgresql.md): Deploy PostgreSQL databases on Coolify with advanced features, automated backups, import/restore capabilities, and 30+ years of reliability.
+- [MongoDB](/docs/databases/mongodb.md): Deploy MongoDB NoSQL databases on Coolify with flexible document storage, horizontal scalability, and automated backup solutions.
+- [Redis](/docs/databases/redis.md): Deploy Redis in-memory databases on Coolify with caching, vector database, document storage, streaming, and message broker capabilities.
+- [DragonFly](/docs/databases/dragonfly.md): Deploy DragonFly in-memory datastore on Coolify with Redis compatibility, multi-threaded architecture, and enhanced scalability features.
+- [KeyDB](/docs/databases/keydb.md): Deploy KeyDB on Coolify with high-performance multithreading, Redis compatibility, active replication, and FLASH storage support.
+- [ClickHouse](/docs/databases/clickhouse.md): Deploy ClickHouse on Coolify with column-oriented OLAP database, real-time analytics, S3 backups, and exceptional query performance.
+
+### Integrations
+
+- [Deploy Webstudio Projects to Hetzner with Coolify](/docs/integrations/webstudio.md): Complete guide to deploying Webstudio projects with Coolify on Hetzner servers using Docker, GitHub integration, and automated deployment.
+
+### Knowledge Base
+
+- [Overview](/docs/knowledge-base/overview.md): Comprehensive Coolify knowledge base covering deployment guides, server setup, Git integration, proxy configuration, and troubleshooting resources.
+
+#### Overview
+
+- [FAQ](/docs/knowledge-base/faq.md): Common Coolify questions answered including SSH permissions, custom ports, Cloudflare SSL, concurrent builds, and application port mapping troubleshooting.
+
+##### Internal
+
+- [Scalability](/docs/knowledge-base/internal/scalability.md): Scale Coolify applications with traditional horizontal scaling across multiple servers using load balancers or Docker Swarm for high availability deployments.
+- [Terminal](/docs/knowledge-base/internal/terminal.md): Access Coolify resources through built-in web terminal with xterm.js, secure SSH connections, and Websocket communication for all containers and servers.
+
+##### Self-hosted Instance
+
+- [Monitoring](/docs/knowledge-base/monitoring.md): Monitor Coolify resources with built-in disk usage tracking, automatic cleanup, container status monitoring, and backup status notifications.
+- [Notifications](/docs/knowledge-base/notifications.md): Configure multi-channel notifications in Coolify with Email, Telegram, Discord, Slack, and Pushover for deployments, backups, and server monitoring alerts.
+- [Coolify Instance Updates - Self-hosted](/docs/knowledge-base/self-update.md): Configure automatic Coolify updates with custom cron schedules, manual update options, and service template synchronization for self-hosted instances.
+- [Commands](/docs/knowledge-base/commands.md): Essential Coolify CLI commands for root password reset, email changes, and deleting stuck services via Docker exec and Artisan commands.
+- [Delete User](/docs/knowledge-base/delete-user.md): Safely delete users from Coolify with automatic team ownership transfer, resource cleanup, and team member reassignment procedures.
+- [OAuth](/docs/knowledge-base/oauth.md): Set up OAuth authentication with GitHub, GitLab, Google, Azure, or Bitbucket for secure single sign-on access to your Coolify instance.
+- [Create Root User with Environment Variables](/docs/knowledge-base/create-root-user-with-env.md): Create Coolify root user during installation with environment variables including email validation, username requirements, and strong password policies.
+- [Define Custom Docker Network with Environment Variables](/docs/knowledge-base/define-custom-docker-network-with-env.md): Configure custom Docker network CIDR blocks and address pools using environment variables during Coolify installation for advanced network setups
+- [Custom Docker Registry](/docs/knowledge-base/custom-docker-registry.md): Switch between Docker Hub and GitHub Container Registry (ghcr.io) for pulling Coolify images during installation or runtime
+- [Change Localhost Key](/docs/knowledge-base/change-localhost-key.md): Replace and regenerate Coolify's localhost SSH private key with safe database backup procedures and Docker container key installation.
+
+##### DNS & Domains
+
+- [DNS Configuration](/docs/knowledge-base/dns-configuration.md): Configure A records, wildcard domains, and autogenerated subdomains for Coolify applications with DNS setup examples and preview deployments.
+- [Domains](/docs/knowledge-base/domains.md): Add custom domains to Coolify with FQDN format, multiple domain support, port mapping, wildcard domains, and custom DNS server validation.
+
+##### Destinations
+
+- [Destinations](/docs/knowledge-base/destinations.md): Manage Docker network destinations in Coolify for isolated deployment environments supporting standalone Docker and Swarm cluster configurations.
+- [Creating Destinations](/docs/knowledge-base/destinations/create.md): Create Docker network destinations in Coolify for standalone or Swarm deployments with automatic proxy configuration and network scanning.
+- [Managing Destinations](/docs/knowledge-base/destinations/manage.md): Manage Coolify destinations including editing, deleting, resource assignment, and connecting service stacks to predefined Docker networks.
+
+##### Resources
+
+- [Environment Variables](/docs/knowledge-base/environment-variables.md): Manage build-time and runtime environment variables in Coolify with team, project, and environment-based shared variables plus predefined system values.
+- [Persistent Storage](/docs/knowledge-base/persistent-storage.md): Configure persistent Docker volumes and bind mounts for Coolify resources to preserve data between deployments with proper path mapping and sharing options.
+- [Drain Logs](/docs/knowledge-base/drain-logs.md): Stream Coolify application logs to Axiom, New Relic, or custom FluentBit destinations for centralized monitoring and log analysis.
+- [Rolling updates](/docs/knowledge-base/rolling-updates.md): Deploy zero-downtime application updates with Coolify rolling updates using health checks, default container naming, and graceful container transitions.
+- [Health checks](/docs/knowledge-base/health-checks.md): Configure application health checks in Coolify with Dockerfile or UI settings for Traefik routing, rolling updates, and troubleshooting 404 errors.
+- [Supported Cron Syntax](/docs/knowledge-base/cron-syntax.md): Complete cron syntax reference for Coolify scheduled tasks including standard format and predefined schedules like hourly, daily, and weekly.
+
+##### How-Tos
+
+- [Migrate Applications](/docs/knowledge-base/how-to/migrate-apps-different-host.md): Step-by-step guide to migrate applications, databases, and Docker volumes from one Coolify server to another with backup and restore scripts
+- [Backup and Restore Coolify](/docs/knowledge-base/how-to/backup-restore-coolify.md): Backup and restore your Coolify instance with S3 or manual methods including database migration, SSH key transfer, and APP_KEY configuration.
+- [Load Balancing on Hetzner](/docs/knowledge-base/how-to/hetzner-loadbalancing.md): Deploy scalable load-balanced applications on Hetzner Cloud with Coolify including TLS termination, health checks, database setup, and firewall configuration.
+- [Using WordPress Multisite with Coolify](/docs/knowledge-base/how-to/wordpress-multisite.md): Configure WordPress Multisite in Coolify with subdomain or subdirectory setup, persistent storage, and network configuration
+- [Raspberry Pi OS Setup Guide](/docs/knowledge-base/how-to/raspberry-pi-os.md): Install Coolify on Raspberry Pi with 64-bit OS setup guide covering Pi Zero 2 W, Pi 3, 4, and 5 models with SSH configuration.
+- [Private NPM Registry](/docs/knowledge-base/how-to/private-npm-registry.md): Use private NPM registries with Coolify deployments by configuring .npmrc authentication tokens and build environment variables.
+- [Ollama with GPU](/docs/knowledge-base/how-to/ollama-with-gpu.md): Self-host Ollama LLM with NVIDIA GPU acceleration on Coolify including hardware requirements, Docker configuration, and model management setup.
+
+##### Servers
+
+- [Introduction](/docs/knowledge-base/server/introduction.md): Connect localhost and remote Linux servers to Coolify with SSH authentication, Docker Engine, wildcard domains, and Traefik proxy setup.
+- [Automated Docker Cleanup](/docs/knowledge-base/server/automated-cleanup.md): Prevent disk space issues with Coolify's automated Docker cleanup removing stopped containers, unused images, build cache, and volumes on schedule or threshold.
+- [Build Server](/docs/knowledge-base/server/build-server.md): Set up a build server in Coolify to separate your build process from deployment, reduce load, and improve performance.
+- [Firewall](/docs/knowledge-base/server/firewall.md): Configure firewall ports for Coolify including SSH, HTTP/HTTPS, dashboard access, and terminal with ufw-docker setup for self-hosted and cloud instances.
+- [Multiple Servers](/docs/knowledge-base/server/multiple-servers.md): Deploy applications across multiple servers with Coolify for high availability using Docker Registry, load balancers, and synchronized deployments.
+- [Sentinel and Metrics](/docs/knowledge-base/server/sentinel.md): Monitor server and container CPU and RAM usage with Coolify's lightweight Sentinel container providing Linux API and resource metrics collection.
+- [Non-root user](/docs/knowledge-base/server/non-root-user.md): Configure Coolify servers with non-root users using SSH keys and passwordless sudo permissions for secure resource management.
+- [OpenSSH](/docs/knowledge-base/server/openssh.md): Configure OpenSSH server for Coolify with key-based authentication, proper permissions, and automated SSH setup across Ubuntu, Debian, CentOS, and Alpine Linux.
+- [Oracle Cloud](/docs/knowledge-base/server/oracle-cloud.md): Configure Oracle Cloud free ARM servers with Coolify including root user setup, SSH configuration, firewall rules, and non-root user permissions.
+- [Supported Proxy](/docs/knowledge-base/server/proxies.md): Learn about Traefik and Caddy reverse proxy support in Coolify for routing traffic, SSL certificates, and load balancing with switching guide
+- [Server Patching](/docs/knowledge-base/server/patching.md): Update server packages from Coolify dashboard with APT, DNF, and Zypper support including individual or batch updates and weekly notifications.
+- [Terminal Access](/docs/knowledge-base/server/terminal-access.md): Enable or disable terminal access for servers and containers in Coolify with admin-level controls and security permissions management.
+
+##### S3
+
+- [Introduction](/docs/knowledge-base/s3/introduction.md): Configure S3-compatible storage for Coolify backups including AWS, DigitalOcean Spaces, MinIO, Cloudflare R2, Backblaze B2, and Scaleway Object Storage.
+- [Aws S3 Backup Setup](/docs/knowledge-base/s3/aws.md): Set up automated Coolify backups with AWS S3 including IAM policy creation, bucket configuration, access key setup, and cost-effective lifecycle rules.
+- [Cloudflare R2](/docs/knowledge-base/s3/r2.md): Configure Cloudflare R2 S3-compatible storage for Coolify backups with bucket creation, API token setup, and access credentials configuration.
+
+##### Docker
+
+- [Docker Compose](/docs/knowledge-base/docker/compose.md): Deploy multi-container Docker Compose stacks in Coolify with magic environment variables, persistent storage, healthchecks, and predefined network connections.
+- [Custom Commands](/docs/knowledge-base/docker/custom-commands.md): Add custom Docker run options to Coolify deployments including custom entrypoints, GPU support, security options, system controls, devices, and resource limits.
+- [Docker Registry](/docs/knowledge-base/docker/registry.md): Push built Docker images to any registry with Coolify including custom tags, authentication setup, Swarm mode support, and self-hosted registry configuration.
+- [Docker Swarm](/docs/knowledge-base/docker/swarm.md): Deploy Coolify resources across Docker Swarm clusters with external registry requirements, manager and worker setup, and persistent storage configuration.
+
+##### Cloudflare
+
+- [Cloudflare Origin Certificate](/docs/knowledge-base/cloudflare/origin-cert.md): Secure Coolify deployments with 15-year Cloudflare Origin Certificates for TLS encryption without HTTP challenges or port 80 exposure requirements.
+
+###### Tunnels
+
+- [Cloudflare Tunnels](/docs/knowledge-base/cloudflare/tunnels/overview.md): Connect Coolify resources securely without port forwarding using Cloudflare Tunnels for all resources, single apps, SSH access, or full HTTPS setups.
+- [Access All Resource via Cloudflare Tunnels](/docs/knowledge-base/cloudflare/tunnels/all-resource.md): Expose all Coolify resources securely through Cloudflare Tunnels without public IPs or port forwarding using wildcard domains and HTTP proxy routing.
+- [Access Single Resource via Cloudflare Tunnels](/docs/knowledge-base/cloudflare/tunnels/single-resource.md): Securely access individual Coolify applications through Cloudflare Tunnels with port mapping, domain configuration, and multi-resource tunneling support.
+- [Server SSH Access via Cloudflare Tunnels](/docs/knowledge-base/cloudflare/tunnels/server-ssh.md): Enable secure SSH access to Coolify servers via Cloudflare Tunnels with automated or manual cloudflared installation hiding server IP addresses.
+- [Full HTTPS/TLS Setup for All Resources](/docs/knowledge-base/cloudflare/tunnels/full-tls.md): Configure end-to-end HTTPS for Coolify resources through Cloudflare Tunnels with Origin Certificates, strict TLS encryption, and proper domain setup.
+
+##### Proxy
+
+###### Traefik
+
+- [Traefik Overview](/docs/knowledge-base/proxy/traefik/overview.md): Configure Traefik reverse proxy in Coolify with dynamic routing, SSL management, load balancing, and dashboard monitoring for containerized applications.
+- [Basic Auth Middleware](/docs/knowledge-base/proxy/traefik/basic-auth.md): Protect Coolify applications and services with Traefik basic authentication middleware using htpasswd credentials for standard and Docker Compose deployments.
+- [Custom SSL Certificates](/docs/knowledge-base/proxy/traefik/custom-ssl-certs.md): Use custom SSL certificates with Traefik proxy in Coolify including self-signed certificates, Let's Encrypt, and public CA certificates configuration.
+- [Enable Dashboard](/docs/knowledge-base/proxy/traefik/dashboard.md): Enable and secure Traefik dashboard in Coolify with basic authentication, dynamic configuration, Let's Encrypt SSL, and custom domain access.
+- [Dynamic Configurations](/docs/knowledge-base/proxy/traefik/dynamic-config.md): Configure Traefik proxy on the fly without restarts using Coolify's dynamic configuration system for real-time middleware and routing updates.
+- [Load-balancing](/docs/knowledge-base/proxy/traefik/load-balancing.md): Configure Traefik load balancing in Coolify across multiple servers or containers with dynamic configuration, HTTPS support, and health monitoring.
+- [Redirects](/docs/knowledge-base/proxy/traefik/redirects.md): Configure Traefik URL redirects in Coolify including www to non-www, domain forwarding, and HTTPS redirections for applications and services.
+- [Wildcard SSL Certificates](/docs/knowledge-base/proxy/traefik/wildcard-certs.md): Configure Let's Encrypt wildcard SSL certificates with Traefik DNS challenge using Cloudflare, Hetzner, or other providers for automatic subdomain coverage.
+- [Authentik Forward Authentication Middleware](/docs/knowledge-base/proxy/traefik/protect-services-with-authentik.md): Secure Coolify services with Authentik SSO forward authentication using Traefik middleware for proxy provider single sign-on protection.
+
+###### Caddy
+
+- [Caddy Overview](/docs/knowledge-base/proxy/caddy/overview.md): Use Caddy reverse proxy with Coolify for automatic SSL certificates, simple configuration, and HTTP/2 support as an alternative to Traefik.
+- [Caddy Basic Auth](/docs/knowledge-base/proxy/caddy/basic-auth.md): Add password protection to Coolify applications with Caddy basic authentication using hash-password CLI for secure credential management.
+
+### API Reference
+
+- [Authorization](/docs/api-reference/authorization.md): Learn how to authorize API requests in Coolify with Bearer tokens, scoped permissions, and secure access control.
+
+### Troubleshoot
+
+- [Troubleshooting Overview](/docs/troubleshoot/overview.md): Comprehensive Coolify troubleshooting guides covering deployment errors, server issues, proxy problems, SSL certificates, and application configuration fixes.
+
+#### Installation
+
+- [Coolify Install Script Failed](/docs/troubleshoot/installation/install-script-failed.md): Debug and fix Coolify installation script failures with step-by-step troubleshooting for logs, Docker issues, port conflicts, and container problems.
+- [Docker Installation Failed](/docs/troubleshoot/installation/docker-install-failed.md): Fix Docker installation failures during Coolify setup by using Ubuntu LTS versions or manually installing Docker 24+ on non-LTS operating systems.
+
+#### Applications
+
+- [Bad Gateway Error](/docs/troubleshoot/applications/bad-gateway.md): Fix Bad Gateway (502) errors in Coolify by checking port configuration, host mapping, listening addresses, and container health.
+- [No Available Server Error](/docs/troubleshoot/applications/no-available-server.md): Fix No Available Server (503) errors in Coolify by diagnosing health checks, domain configuration, port mismatches, and Traefik routing.
+- [Gateway Timeout Errors](/docs/troubleshoot/applications/gateway-timeout.md): Resolve Gateway Timeout (504) errors in Coolify by fixing network isolation, adjusting proxy timeouts for Traefik, Caddy, and Nginx.
+- [Failed To Get Access Token During Deployment](/docs/troubleshoot/applications/failed-to-get-token.md): Fix GitHub access token errors in Coolify deployments caused by NTP time synchronization issues affecting JWT 'iat' claim validation during authentication.
+
+#### Dashboard
+
+- [Dashboard Inaccessible via Instance Domain](/docs/troubleshoot/dashboard/dashboard-inaccessible.md): Fix Coolify dashboard access issues by checking proxy status, container health, firewall ports, and resolving domain configuration.
+- [Slow Coolify Dashboard Performance](/docs/troubleshoot/dashboard/dashboard-slow-performance.md): Resolve slow Coolify dashboard loading by disabling Cloudflare Rocket Loader, checking server location, and optimizing proxy settings for faster performance.
+- [Disable 2FA Manually](/docs/troubleshoot/dashboard/disable-2fa-manually.md): Manually disable two-factor authentication in Coolify using SSH, Docker exec, and Laravel Tinker commands when you've lost your 2FA device or codes.
+
+#### Docker
+
+- [Expired GitHub Personal Access Token (PAT)](/docs/troubleshoot/docker/expired-github-personal-access-token.md): Fix GitHub Container Registry authentication errors by logging out of ghcr.io or renewing expired GitHub Personal Access Tokens for Docker deployments.
+
+#### Server
+
+- [Connection Unstable](/docs/troubleshoot/server/connection-issues.md): Fix unstable Coolify server connections by removing UFW LIMIT rules, adjusting iptables, and configuring firewall settings for port 22 SSH access.
+- [Server Crash During Build](/docs/troubleshoot/server/crash-during-build.md): Fix server crashes during Coolify builds by offloading to external build servers, using GitHub Actions, or upgrading server resources for Docker image builds.
+- [2FA Stopped Working](/docs/troubleshoot/server/two-factor-stopped-working.md): Fix two-factor authentication failures in Coolify by synchronizing server time with NTP, checking systemd-timesyncd, and configuring firewall port 123 access.
+- [Raspberry Pi Crashes](/docs/troubleshoot/server/raspberry-crashes.md): Fix Raspberry Pi crashes on Coolify by upgrading to 4GB+ RAM or limiting Docker memory usage on 2GB models with slow SD card configurations.
+- [Server Validation Issues](/docs/troubleshoot/server/validation-issues.md): Resolve Coolify server validation errors by verifying SSH private key format includes BEGIN and END OPENSSH PRIVATE KEY headers to fix libcrypto errors.
+
+#### DNS & Domains
+
+- [Coolify not using Wildcard SSL Certificates](/docs/troubleshoot/dns-and-domains/wildcard-ssl-certs.md): Fix wildcard SSL certificate issues in Coolify by verifying installation, checking proxy configuration, and clearing browser cache.
+- [Let's Encrypt Not Generating SSL Certificates on Coolify](/docs/troubleshoot/dns-and-domains/lets-encrypt-not-working.md): Fix Let's Encrypt SSL failures by opening ports 80/443, checking DNS records, verifying Cloudflare settings, and troubleshooting challenges.
+- [Certificate Resolver Not Found on Coolify Proxy](/docs/troubleshoot/dns-and-domains/certificate-resolver-doesnt-exist.md): Fix Traefik 'letsencrypt cert resolver not found' errors by setting correct acme.json file permissions using chmod 600 for non-root Coolify users.
+
+### Other
+
+- [ActivePieces](/docs/services/activepieces.md): Deploy ActivePieces workflow automation platform on Coolify with TypeScript-based extensible automation, visual builder, and 100+ integrations.
+- [Actual Budget](/docs/services/actualbudget.md): Host Actual Budget on Coolify for privacy-focused envelope budgeting with multi-device sync, end-to-end encryption, and real-time financial tracking.
+- [Affine](/docs/services/affine.md): Deploy AFFiNE workspace on Coolify combining docs, whiteboards, and databases for seamless collaboration and creative project management.
+- [AnythingLLM](/docs/services/anythingllm.md): Run AnythingLLM on Coolify for all-in-one AI application with RAG, AI agents, document chat, and multi-model support without infrastructure hassle.
+- [Apache Superset](/docs/services/superset.md): Deploy Apache Superset on Coolify for modern data exploration, interactive dashboards, SQL editor, and business intelligence visualization.
+- [Apprise API](/docs/services/apprise-api.md): Host Apprise API on Coolify to send push notifications to 100+ services via unified REST API for alerts, monitoring, and messaging workflows.
+- [Appsmith](/docs/services/appsmith.md): Build internal tools on Coolify with Appsmith's low-code platform featuring drag-and-drop UI, database connectors, and custom business logic.
+- [Appwrite](/docs/services/appwrite.md): Deploy Appwrite BaaS on Coolify for authentication, databases, storage, serverless functions, and real-time APIs for web and mobile apps.
+- [Argilla](/docs/services/argilla.md): Host Argilla on Coolify for collaborative AI dataset creation, annotation, labeling, and feedback collection for machine learning projects.
+- [Audiobookshelf](/docs/services/audiobookshelf.md): Deploy Audiobookshelf on Coolify for self-hosted audiobook and podcast server with mobile apps, progress tracking, and streaming support.
+- [Authentik](/docs/services/authentik.md): Run Authentik identity provider on Coolify with SSO, LDAP, OAuth2, SAML support for unified authentication and user management across apps.
+- [BabyBuddy](/docs/services/babybuddy.md): Track baby care on Coolify with Baby Buddy featuring feeding, diaper changes, sleep schedules, growth charts, and caregiver coordination.
+- [Beszel](/docs/services/beszel.md): Deploy Beszel lightweight server monitoring on Coolify with real-time metrics, Docker stats, and minimal resource usage for infrastructure tracking.
+- [Bitcoin Core](/docs/services/bitcoin-core.md): Run Bitcoin Core full node on Coolify for decentralized cryptocurrency network participation, wallet management, and blockchain validation.
+- [Bluesky PDS](/docs/services/bluesky-pds.md): Host a Bluesky Personal Data Server with Coolify
+- [Bookstack](/docs/services/bookstack.md): Deploy BookStack wiki on Coolify for organized documentation with WYSIWYG editor, hierarchical structure, search, and team collaboration features.
+- [Browserless](/docs/services/browserless.md): Run Browserless on Coolify for headless Chrome automation, web scraping, PDF generation, and screenshot services via simple REST API.
+- [BudgE](/docs/services/budge.md): Manage finances with Budge on Coolify offering budget tracking, expense categorization, financial goals, and spending insights for personal finance.
+- [Budibase](/docs/services/budibase.md): Build internal apps on Coolify with Budibase low-code platform featuring database integration, workflow automation, and custom business applications.
+- [Bugsink](/docs/services/bugsink.md): Deploy Bugsink error tracking on Coolify for application monitoring, exception logging, stack traces, and debugging insights for development teams.
+- [Calcom](/docs/services/calcom.md): Host Cal.com scheduling platform on Coolify with calendar integration, team booking, payment processing, and customizable appointment workflows.
+- [Calibre Web](/docs/services/calibre-web.md): Run Calibre Web on Coolify for ebook library management with OPDS feeds, reading interface, format conversion, and metadata editing features.
+- [Cap](/docs/services/cap.md): Here you can find the documentation for hosting Cap with Coolify.
+- [Castopod](/docs/services/castopod.md): Deploy Castopod podcast hosting on Coolify with RSS feeds, analytics, social features, and fediverse integration for independent podcasters.
+- [Change Detection](/docs/services/changedetection.md): Monitor website changes on Coolify with Change Detection featuring automatic tracking, alerts, visual diffs, and API endpoint monitoring.
+- [Chaskiq](/docs/services/chaskiq.md): Run Chaskiq customer engagement platform on Coolify with live chat, email campaigns, knowledge base, and conversational marketing automation.
+- [Chatwoot](/docs/services/chatwoot.md): Deploy Chatwoot customer support on Coolify with omnichannel inbox, live chat widgets, automation rules, and team collaboration for helpdesk.
+- [Checkmate](/docs/services/checkmate.md): Host Checkmate monitoring on Coolify for uptime checks, SSL certificate tracking, domain expiration alerts, and infrastructure health monitoring.
+- [Chroma](/docs/services/chroma.md): Deploy Chroma vector database on Coolify for AI embeddings storage, semantic search, and retrieval-augmented generation in machine learning apps.
+- [ClassicPress](/docs/services/classicpress.md): Run ClassicPress CMS on Coolify as WordPress alternative with classic editor, no blocks, and focus on business websites and traditional publishing.
+- [Cloudbeaver](/docs/services/cloudbeaver.md): Deploy CloudBeaver on Coolify for web-based database management supporting PostgreSQL, MySQL, MongoDB with SQL editor and data visualization.
+- [Cloudflared](/docs/services/cloudflared.md): Run Cloudflare Tunnel on Coolify to expose local services securely without port forwarding using cloudflared for remote access and protection.
+- [Cockpit](/docs/services/cockpit.md): Host Cockpit CMS on Coolify for headless content management with flexible data structures, REST API, GraphQL, and developer-friendly workflows.
+- [Code Server](/docs/services/code-server.md): Run VS Code in browser on Coolify with code-server for remote development, extensions support, terminal access, and cloud-based coding environment.
+- [CodiMD](/docs/services/codimd.md): Deploy CodiMD collaborative markdown editor on Coolify with real-time collaboration, presentations, diagrams, and knowledge sharing for teams.
+- [Convertx](/docs/services/convertx.md): Host ConvertX file conversion on Coolify for format transformation, document processing, image optimization, and media file conversion services.
+- [Convex](/docs/services/convex.md): Deploy Convex backend on Coolify with reactive database, serverless functions, real-time sync, and TypeScript-first development for modern apps.
+- [Cryptgeon](/docs/services/cryptgeon.md): Share secrets securely on Coolify with Cryptgeon featuring self-destructing messages, end-to-end encryption, and no server-side storage.
+- [Cyberchef](/docs/services/cyberchef.md): Run CyberChef data analysis on Coolify for encoding, decoding, encryption, compression, and data transformation with 300+ operations.
+- [Dashboard](/docs/services/dashboard.md): Deploy customizable dashboard on Coolify for application shortcuts, bookmarks, service monitoring, and centralized access to self-hosted tools.
+- [Dashy](/docs/services/dashy.md): Host Dashy dashboard on Coolify with customizable widgets, service health checks, themes, icons, and organized homepage for self-hosted services.
+- [Denokv](/docs/services/denokv.md): Run Deno KV database on Coolify for edge-compatible key-value store with ACID transactions, real-time sync, and serverless architecture support.
+- [Directus](/docs/services/directus.md): Deploy Directus headless CMS on Coolify with SQL database wrapper, REST/GraphQL API, no-code data studio, and custom field types for any project.
+- [Diun](/docs/services/diun.md): Monitor Docker images on Coolify with Diun for automatic update notifications, registry tracking, and container version management alerts.
+- [Docker Registry](/docs/services/docker-registry.md): Host private Docker registry on Coolify for container image storage, distribution, versioning, and secure artifact management for DevOps teams.
+- [Docmost](/docs/services/docmost.md): Deploy Docmost wiki on Coolify for team documentation, knowledge management, real-time collaboration, and organized information sharing platform.
+- [Documenso](/docs/services/documenso.md): Run Documenso document signing on Coolify as open-source DocuSign alternative with e-signatures, PDF workflows, and digital signature management.
+- [Docuseal](/docs/services/docuseal.md): Host DocuSeal on Coolify for PDF form filling, e-signatures, document workflows, and digital signature collection for business process automation.
+- [DokuWiki](/docs/services/dokuwiki.md): Deploy DokuWiki on Coolify for flat-file wiki without database, version control, ACL permissions, and plugin extensibility for documentation.
+- [Dolibarr](/docs/services/dolibarr.md): Run Dolibarr ERP/CRM on Coolify with invoicing, inventory, projects, HR management, and business process automation for small to medium enterprises.
+- [Dozzle](/docs/services/dozzle.md): Monitor Docker logs on Coolify with Dozzle real-time log viewer featuring search, filtering, multi-container support, and lightweight web interface.
+- [Drizzle Gateway](/docs/services/drizzle-gateway.md): Deploy and host Drizzle Studio with Coolify to explore SQL databases in your Drizzle ORM project visually and efficiently.
+- [Drupal](/docs/services/drupal.md): Deploy Drupal CMS on Coolify for enterprise content management with powerful APIs, content types, workflows, and extensive module ecosystem.
+- [Duplicati](/docs/services/duplicati.md): Host Duplicati backup on Coolify with encrypted cloud backups, incremental updates, scheduling, and restore capabilities for data protection.
+- [Easyappointments](/docs/services/easyappointments.md): Run Easy!Appointments on Coolify for online booking system with calendar sync, customer management, SMS notifications, and service scheduling.
+- [Elasticsearch](/docs/services/elasticsearch.md): Here you can find the documentation for hosting Elasticsearch with Coolify.
+- [Emby](/docs/services/emby.md): Host Emby media server on Coolify for streaming movies, TV shows, music, and photos with transcoding, mobile apps, and DVR capabilities.
+- [Emby Stat](/docs/services/embystat.md): Track Emby server usage on Coolify with EmbyStat featuring media statistics, playback analytics, user metrics, and library health monitoring.
+- [Ente](/docs/services/ente-photos.md): Here you can find the documentation for hosting Ente with Coolify.
+- [Evolution API](/docs/services/evolution-api.md): Deploy Evolution API on Coolify for WhatsApp Business integration, message automation, chatbot workflows, and customer communication management.
+- [Excalidraw](/docs/services/excalidraw.md): Run Excalidraw on Coolify for collaborative whiteboarding with hand-drawn diagrams, real-time collaboration, and export options for visual thinking.
+- [Faraday](/docs/services/faraday.md): Host Faraday security platform on Coolify for penetration testing management, vulnerability tracking, and collaborative security assessment workflows.
+- [Fider](/docs/services/fider.md): Deploy Fider feedback platform on Coolify for product ideas, feature voting, roadmap planning, and customer feedback collection for product teams.
+- [Filebrowser](/docs/services/filebrowser.md): Run File Browser on Coolify for web-based file management with uploads, sharing, search, and access control for self-hosted cloud storage.
+- [FileFlows](/docs/services/fileflows.md): Host FileFlows on Coolify for automated file processing, media conversion, organization workflows, and batch operations with visual flow builder.
+- [Firefly III](/docs/services/firefly.md): Manage personal finances on Coolify with Firefly III featuring budgets, reports, recurring transactions, and multi-currency expense tracking.
+- [Firefox](/docs/services/firefox.md): Run Firefox browser on Coolify in containerized environment for secure web browsing, testing, and isolated internet access via web interface.
+- [Flipt](/docs/services/flipt.md): Host Flipt feature flags on Coolify for feature toggles, A/B testing, gradual rollouts, and environment-specific configuration management.
+- [Flowise](/docs/services/flowise.md): Build AI workflows on Coolify with Flowise drag-and-drop LLM interface for chatbots, agents, RAG applications, and custom AI tool integration.
+- [Forgejo](/docs/services/forgejo.md): Deploy Forgejo Git hosting on Coolify as lightweight GitHub alternative with repositories, CI/CD, issues, pull requests, and collaboration tools.
+- [Formbricks](/docs/services/formbricks.md): Run Formbricks surveys on Coolify for in-app feedback, NPS surveys, user research, and product experience analytics with no-code forms.
+- [Foundryvtt](/docs/services/foundryvtt.md): Host Foundry VTT on Coolify for virtual tabletop RPG gaming with dynamic lighting, fog of war, character sheets, and immersive D&D sessions.
+- [Freescout](/docs/services/freescout.md): Deploy FreeScout helpdesk on Coolify as self-hosted HelpScout alternative with shared inbox, ticketing, and customer support email management.
+- [Freshrss](/docs/services/freshrss.md): Run FreshRSS reader on Coolify for RSS/Atom feed aggregation, article reading, mobile apps integration, and news consumption with privacy.
+- [Ghost](/docs/services/ghost.md): Deploy Ghost publishing platform on Coolify for professional blogs, newsletters, memberships, and content monetization with modern editor.
+- [Gitea](/docs/services/gitea.md): Host Gitea Git service on Coolify for lightweight repository hosting with pull requests, CI/CD integration, issues, and team collaboration.
+- [GitHub Runner](/docs/services/github-runner.md): Run self-hosted GitHub Actions runner on Coolify for CI/CD workflows, private infrastructure builds, and automated deployment pipelines.
+- [GitLab](/docs/services/gitlab.md): Deploy GitLab on Coolify for complete DevOps platform with Git repos, CI/CD pipelines, issue tracking, and container registry integration.
+- [Glance](/docs/services/glance.md): Host Glance dashboard on Coolify for quick server overview, system monitoring, service status, and at-a-glance infrastructure health display.
+- [Glances](/docs/services/glances.md): Monitor system performance on Coolify with Glances showing CPU, memory, disk, network stats, and process monitoring via web interface.
+- [Glitchtip](/docs/services/glitchtip.md): Deploy GlitchTip error tracking on Coolify as open-source Sentry alternative for exception monitoring, performance tracking, and debugging.
+- [Gotenberg](/docs/services/gotenberg.md): Run Gotenberg on Coolify for PDF generation from HTML, Markdown, Office files via Docker-based microservice with REST API for conversions.
+- [Gotify](/docs/services/gotify.md): Deploy Gotify on Coolify for self-hosted push notifications, real-time messaging, REST API integration, and Android/iOS notification delivery.
+- [GoWa](/docs/services/gowa.md): Host Gowa analytics on Coolify for website traffic tracking, visitor insights, and privacy-respecting web analytics without cookies or tracking.
+- [Grafana](/docs/services/grafana.md): Deploy Grafana on Coolify for data visualization, monitoring dashboards, alerting, and metric analysis from multiple data sources and databases.
+- [Gramps Web](/docs/services/gramps-web.md): Deploy Gramps Web genealogy system on Coolify for building your family tree.
+- [Grist](/docs/services/grist.md): Run Grist spreadsheet on Coolify combining spreadsheets and databases with relational data, forms, automation, and collaborative data management.
+- [Grocy](/docs/services/grocy.md): Manage household on Coolify with Grocy for grocery inventory, recipe management, chore tracking, and smart shopping lists for home organization.
+- [Heimdall](/docs/services/heimdall.md): Deploy Heimdall dashboard on Coolify for application launcher, bookmark manager, and organized access point to all your self-hosted services.
+- [Heyform](/docs/services/heyform.md): Build forms on Coolify with HeyForm featuring conversational forms, conditional logic, integrations, and beautiful form experiences without coding.
+- [Hoarder](/docs/services/hoarder.md): Host Hoarder bookmark manager on Coolify for saving links, organizing collections, tagging, and personal knowledge management with search.
+- [Homarr](/docs/services/homarr.md): Run Homarr dashboard on Coolify for service management, monitoring, quick access, widgets, and customizable homepage for self-hosted applications.
+- [Home Assistant](/docs/services/home-assistant.md): Run Home Assistant on Coolify—your open-source home automation platform with integrations for hundreds of devices.
+- [Homebox](/docs/services/homebox.md): Manage home inventory on Coolify with Homebox for asset tracking, warranty management, location organization, and household item cataloging.
+- [Homepage](/docs/services/homepage.md): Deploy Homepage dashboard on Coolify for service bookmarks, status monitoring, widgets integration, and organized homepage for self-hosted tools.
+- [Hoppscotch](/docs/services/hoppscotch.md): Run Hoppscotch API testing on Coolify as open-source Postman alternative with REST, GraphQL, WebSocket testing, and API development tools.
+- [Immich](/docs/services/immich.md): Host Immich photo management on Coolify for Google Photos alternative with mobile backup, ML-powered search, face recognition, and sharing.
+- [Infisical](/docs/services/infisical.md): Deploy Infisical secrets management on Coolify for environment variables, API keys, secure sharing, and centralized secrets across development teams.
+- [Invoice Ninja](/docs/services/invoice-ninja.md): Run Invoice Ninja on Coolify for invoicing, expense tracking, time billing, payment processing, and client management for freelancers.
+- [It Tools](/docs/services/it-tools.md): Host IT Tools collection on Coolify with 80+ developer utilities for encoding, hashing, formatting, and text transformation in web interface.
+- [Jellyfin](/docs/services/jellyfin.md): Deploy Jellyfin media server on Coolify for streaming movies, TV shows, music with no licensing, transcoding, and mobile app support.
+- [Jenkins](/docs/services/jenkins.md): Run Jenkins CI/CD on Coolify for automated builds, testing, deployment pipelines, and continuous integration workflows with extensive plugins.
+- [Joomla](/docs/services/joomla.md): Host Joomla CMS on Coolify for flexible content management, extensions, multilingual sites, and powerful website building with PHP framework.
+- [Joplin](/docs/services/joplin.md): Deploy Joplin notes on Coolify for markdown note-taking, to-do lists, synchronization, end-to-end encryption, and cross-platform organization.
+- [Jupyter Notebook Python](/docs/services/jupyter-notebook-python.md): Run Jupyter Notebook on Coolify for interactive Python development, data science workflows, visualization, and collaborative computational notebooks.
+- [KaraKeep](/docs/services/karakeep.md): Host KaraKeep password manager on Coolify for secure credential storage, team sharing, encrypted vaults, and self-hosted password management.
+- [Keycloak](/docs/services/keycloak.md): Deploy Keycloak on Coolify for identity and access management with SSO, OAuth2, SAML, user federation, and centralized authentication.
+- [Kimai](/docs/services/kimai.md): Track time on Coolify with Kimai for project time tracking, invoicing, reporting, and team productivity management with mobile support.
+- [Kuzzle](/docs/services/kuzzle.md): Run Kuzzle backend on Coolify for real-time APIs, authentication, data storage, geofencing, and IoT platform with pub/sub messaging.
+- [Label Studio](/docs/services/labelstudio.md): Deploy Label Studio on Coolify for ML data labeling, annotation workflows, image tagging, NLP tasks, and AI training dataset preparation.
+- [Langfuse](/docs/services/langfuse.md): Host Langfuse LLM observability on Coolify for prompt management, tracing, debugging, and analytics for LangChain and OpenAI applications.
+- [Leantime](/docs/services/leantime.md): Manage projects on Coolify with Leantime featuring tasks, gantt charts, time tracking, ideas management, and lean project management approach.
+- [LibreChat](/docs/services/librechat.md): Deploy LibreChat on Coolify for unified AI chat interface supporting GPT-4, Claude, Gemini, and local models with conversation management.
+- [Libreoffice](/docs/services/libreoffice.md): Run LibreOffice Online on Coolify for collaborative document editing, spreadsheets, presentations with web-based office suite interface.
+- [Libretranslate](/docs/services/libretranslate.md): Host LibreTranslate on Coolify for self-hosted translation API supporting 40+ languages with privacy-focused machine translation service.
+- [LimeSurvey](/docs/services/limesurvey.md): Create surveys on Coolify with LimeSurvey featuring questionnaire design, data collection, analysis, and professional survey research tools.
+- [Listmonk](/docs/services/listmonk.md): Run Listmonk newsletter on Coolify for email campaigns, subscriber management, templates, analytics, and high-performance mailing lists.
+- [Litellm](/docs/services/litellm.md): Deploy LiteLLM proxy on Coolify for unified LLM API with 100+ models, load balancing, fallbacks, and standardized OpenAI-compatible interface.
+- [Litequeen](/docs/services/litequeen.md): Host LiteQueen lightweight CMS on Coolify for fast content management, blogging, and simple website administration with minimal resource usage.
+- [LobeChat](/docs/services/lobe-chat.md): Here you can find the documentation for hosting LobeChat with Coolify.
+- [Logto](/docs/services/logto.md): Deploy Logto Auth0 alternative on Coolify with OIDC authentication, passwordless sign-in, RBAC, multi-tenancy, and customer identity management.
+- [Lowcoder](/docs/services/lowcoder.md): Build internal tools on Coolify with Lowcoder low-code platform featuring drag-and-drop UI, database queries, and custom application development.
+- [Mailpit](/docs/services/mailpit.md): Run Mailpit SMTP testing on Coolify for email testing, preview, debugging with web UI for development environments without sending real emails.
+- [Marimo](/docs/services/marimo.md): Deploy Marimo reactive notebooks on Coolify for Python data science with interactive notebooks, reproducible execution, and git-friendly format.
+- [Martin](/docs/services/martin.md): Host Martin tile server on Coolify for serving PostGIS vector tiles, MBTiles, PMTiles with high performance for web mapping applications.
+- [Matrix](/docs/services/matrix.md): Run Matrix Synapse server on Coolify for decentralized chat, end-to-end encryption, federation, and secure real-time communication platform.
+- [Mattermost](/docs/services/mattermost.md): Deploy Mattermost team chat on Coolify for secure messaging, file sharing, integrations, and Slack alternative with on-premises control.
+- [Mautic](/docs/services/mautic5.md): Deploy Mautic open-source marketing automation platform on Coolify for email campaigns, lead nurturing, contact management, and privacy-focused marketing workflows.
+- [Maybe](/docs/services/maybe.md): Manage finances with Maybe on Coolify for net worth tracking, investment portfolio, financial planning, and personal wealth management insights.
+- [Mealie](/docs/services/mealie.md): Deploy Mealie recipe manager on Coolify for meal planning, grocery lists, recipe organization, and household cooking management with nutrition.
+- [Mediawiki](/docs/services/mediawiki.md): Run MediaWiki on Coolify for Wikipedia-style documentation, knowledge bases, collaborative editing, and structured wiki content management.
+- [Meilisearch](/docs/services/meilisearch.md): Deploy Meilisearch on Coolify for lightning-fast typo-tolerant search engine with instant results, filters, and developer-friendly REST API.
+- [Memos](/docs/services/memos.md): Host Memos note-taking on Coolify for quick thoughts, lightweight journaling, tagging, and privacy-focused personal knowledge management.
+- [Metabase](/docs/services/metabase.md): Run Metabase analytics on Coolify for business intelligence, SQL querying, dashboards, and self-service data visualization without coding.
+- [MetaMCP](/docs/services/metamcp.md): Here you can find the documentation for hosting MetaMCP with Coolify.
+- [Metube](/docs/services/metube.md): Deploy MeTube on Coolify for YouTube video downloading with web interface supporting playlists, quality selection, and multiple video platforms.
+- [Mindsdb](/docs/services/mindsdb.md): Host MindsDB on Coolify for AI-powered database with ML predictions, AutoML, model deployment, and SQL-based machine learning integration.
+- [Minecraft](/docs/services/minecraft.md): Run Minecraft server on Coolify for multiplayer gaming, custom worlds, mods support, and community gameplay with dedicated server hosting.
+- [Miniflux](/docs/services/miniflux.md): Deploy Miniflux RSS reader on Coolify for minimalist feed aggregation, reading, filtering, and distraction-free news consumption with speed.
+- [MinIO](/docs/services/minio.md): Host MinIO object storage on Coolify as S3-compatible high-performance storage for backups, data lakes, and cloud-native application storage.
+- [Mixpost](/docs/services/mixpost.md): Run Mixpost social media on Coolify for scheduling, analytics, content calendar, and multi-platform social media management self-hosted solution.
+- [Moodle](/docs/services/moodle.md): Deploy Moodle LMS on Coolify for online learning, course management, assignments, quizzes, and educational platform with extensive plugins.
+- [Mosquitto](/docs/services/mosquitto.md): Host Eclipse Mosquitto on Coolify for MQTT message broker supporting IoT device communication, pub/sub messaging, and lightweight protocols.
+- [N8N](/docs/services/n8n.md): Build workflows on Coolify with n8n automation platform connecting 400+ apps, APIs, databases for no-code/low-code task automation and integration.
+- [Navidrome](/docs/services/navidrome.md): Stream music on Coolify with Navidrome personal server supporting Subsonic API, web player, mobile apps, and self-hosted music library.
+- [Neon Ws Proxy](/docs/services/neon-ws-proxy.md): Deploy Neon WebSocket proxy on Coolify for serverless Postgres connections, connection pooling, and edge database access optimization.
+- [Netbird-Client](/docs/services/netbird-client.md): Run NetBird client on Coolify for WireGuard-based mesh VPN, zero-trust network access, and secure peer-to-peer connectivity.
+- [NewAPI](/docs/services/newapi.md): The next-generation LLM gateway and AI asset management system supports multiple languages.
+- [Newt-Pangolin](/docs/services/newt-pangolin.md): Here you can find the documentation for hosting Newt with Coolify.
+- [Next Image Transformation](/docs/services/next-image-transformation.md): Host Next.js image optimizer on Coolify for dynamic image resizing, format conversion, CDN caching, and web performance optimization.
+- [NextCloud](/docs/services/nextcloud.md): Deploy Nextcloud on Coolify for self-hosted cloud storage, file sync, calendar, contacts, office collaboration, and Google Drive alternative.
+- [Nitropage](/docs/services/nitropage.md): Host NitroPage website builder on Coolify for drag-and-drop page creation, templates, and simple website development without coding skills.
+- [NocoDB](/docs/services/nocodb.md): Deploy NoCoDB on Coolify as Airtable alternative turning databases into smart spreadsheets with REST APIs, forms, and no-code interface.
+- [Nodebb](/docs/services/nodebb.md): Run NodeBB forum on Coolify for modern community discussions, real-time chat, plugins, themes, and social networking platform features.
+- [Ntfy](/docs/services/ntfy.md): Host ntfy notification service on Coolify for simple pub/sub push notifications via HTTP, mobile apps, and scriptable alert delivery.
+- [Observium](/docs/services/observium.md): Monitor networks on Coolify with Observium for SNMP monitoring, device discovery, performance graphs, and infrastructure health tracking.
+- [Odoo](/docs/services/odoo.md): Deploy Odoo ERP on Coolify for integrated business management with CRM, e-commerce, accounting, inventory, and 30+ modular applications.
+- [Ollama](/docs/services/ollama.md): Run Ollama on Coolify for local LLM hosting supporting Llama, Mistral, Gemma, and custom models with REST API for AI applications.
+- [Once Campfire](/docs/services/once-campfire.md): Here you can find the documentation for hosting Once Campfire with Coolify.
+- [Onedev](/docs/services/onedev.md): Host OneDev on Coolify for self-hosted Git server with CI/CD pipelines, issue tracking, code review, and complete DevOps platform.
+- [Onetime Secret](/docs/services/onetimesecret.md): Share secrets securely on Coolify with One-Time Secret for encrypted message sharing that self-destructs after single viewing.
+- [Open Webui](/docs/services/open-webui.md): Deploy Open WebUI on Coolify for self-hosted ChatGPT interface supporting Ollama, OpenAI, and local LLMs with conversation management.
+- [OpenBlocks](/docs/services/openblocks.md): Build apps on Coolify with OpenBlocks low-code platform featuring drag-and-drop UI, database connectors, and rapid application development.
+- [OpenPanel](/docs/services/openpanel.md): Host OpenPanel analytics on Coolify for privacy-focused web analytics, event tracking, user insights without cookies or data collection.
+- [OpnForm](/docs/services/opnform.md): Build beautiful forms and share them anywhere with OpnForm, an open-source form builder that's super fast and requires no coding knowledge.
+- [OrangeHRM](/docs/services/orangehrm.md): Manage HR on Coolify with OrangeHRM for employee records, leave management, time tracking, recruitment, and human resource administration.
+- [Organizr](/docs/services/organizr.md): Deploy Organizr dashboard on Coolify for unified homepage with service tabs, user management, SSO integration, and organized app access.
+- [Osticket](/docs/services/osticket.md): Run osTicket helpdesk on Coolify for ticket management, customer support, email integration, and IT service desk automation workflows.
+- [Outline](/docs/services/getoutline.md): Host Outline wiki on Coolify for team knowledge base, documentation, real-time collaboration, and beautifully organized information sharing.
+- [Overseerr](/docs/services/overseerr.md): Deploy Overseerr on Coolify for Plex/Jellyfin media requests with user management, discovery, approval workflows, and integration automation.
+- [Owncloud](/docs/services/owncloud.md): Run ownCloud on Coolify for enterprise file sync, sharing, collaboration, encryption, and self-hosted cloud storage with desktop clients.
+- [Pairdrop](/docs/services/pairdrop.md): Share files on Coolify with PairDrop for local network file transfer, AirDrop alternative, and quick peer-to-peer file sharing via browser.
+- [Palworld](/docs/services/palworld.md): Host Palworld dedicated server on Coolify for multiplayer survival gameplay with creature collection, base building, and cooperative adventures.
+- [Paperless](/docs/services/paperless.md): Manage documents on Coolify with Paperless-ngx for scanning, OCR, tagging, full-text search, and digital document management system.
+- [Passbolt](/docs/services/passbolt.md): Deploy Passbolt on Coolify for team password management with end-to-end encryption, sharing, access control, and collaborative credentials.
+- [Paymenter](/docs/services/paymenter.md): Host Paymenter billing on Coolify for web hosting invoicing, client management, automated provisioning, and service provider administration.
+- [Penpot](/docs/services/penpot.md): Design on Coolify with Penpot open-source Figma alternative for prototyping, collaboration, SVG-based design, and web-based UI/UX workflows.
+- [PG Back Web](/docs/services/pgbackweb.md): Backup PostgreSQL on Coolify with pgBackWeb for database backups, scheduling, restoration, and web-based backup management interface.
+- [pgAdmin](/docs/services/pgadmin.md): Here you can find the documentation for hosting pgAdmin with Coolify.
+- [phpMyAdmin](/docs/services/phpmyadmin.md): Manage MySQL on Coolify with phpMyAdmin for database administration, SQL queries, table editing, and web-based database management.
+- [Pi-hole](/docs/services/pi-hole.md): Block ads on Coolify with Pi-hole network-wide ad blocking, DNS filtering, tracking protection, and dashboard for home network privacy.
+- [PingvinShare](/docs/services/pingvinshare.md): Share files on Coolify with PingvinShare for temporary file sharing, expiring links, password protection, and self-hosted file transfer.
+- [Plane](/docs/services/plane.md): Manage projects on Coolify with Plane for issue tracking, sprints, roadmaps, and modern project management for software development teams.
+- [Plausible Analytics](/docs/services/plausible.md): Deploy Plausible Analytics on Coolify for lightweight, cookieless, GDPR-compliant web analytics with privacy-first visitor insights.
+- [Plex](/docs/services/plex.md): Stream media on Coolify with Plex server for movies, TV shows, music, photos with transcoding, mobile apps, and live TV DVR support.
+- [Plunk](/docs/services/plunk.md): Send emails on Coolify with Plunk for transactional email API, templates, analytics, and developer-friendly email delivery service.
+- [Pocket ID](/docs/services/pocket-id.md): Deploy Pocket ID on Coolify for simple OIDC provider with passwordless passkey authentication across your self-hosted services.
+- [PocketBase](/docs/services/pocketbase.md): Deploy PocketBase on Coolify for instant backend with database, authentication, file storage, real-time subscriptions in single executable.
+- [Portainer](/docs/services/portainer.md): Manage Docker on Coolify with Portainer for container management, stack deployment, registry access, and web-based Docker administration.
+- [Postgresus](/docs/services/postgresus.md): Postgresus is a free, open source and self-hosted tool to backup PostgreSQL. Make backups with different storages and notifications about progress.
+- [PostHog](/docs/services/posthog.md): Run PostHog analytics on Coolify for product analytics, feature flags, session replay, A/B testing, and user behavior tracking platform.
+- [Postiz](/docs/services/postiz.md): Schedule social media on Coolify with Postiz for content planning, multi-platform posting, analytics, and social media management automation.
+- [Prefect](/docs/services/prefect.md): Orchestrate workflows on Coolify with Prefect for data pipelines, task scheduling, monitoring, and modern workflow automation platform.
+- [Privatebin](/docs/services/privatebin.md): Share text securely on Coolify with PrivateBin for encrypted pastebin, self-destructing messages, and zero-knowledge data sharing.
+- [Prowlarr](/docs/services/prowlarr.md): Manage indexers on Coolify with Prowlarr for centralized torrent and usenet indexer management integrated with Sonarr and Radarr.
+- [Proxyscotch](/docs/services/proxyscotch.md): Run your own CORS proxy on Coolify. Works both standalone & with Hoppscotch
+- [Pterodactyl Panel](/docs/services/pterodactyl.md): Host game servers on Coolify with Pterodactyl panel for Minecraft, CS:GO, ARK with web management, Docker isolation, and automation.
+- [Qbittorrent](/docs/services/qbittorrent.md): Run qBittorrent on Coolify for torrent downloads, RSS automation, web UI, sequential downloading, and BitTorrent client management.
+- [Qdrant](/docs/services/qdrant.md): Deploy Qdrant vector database on Coolify for AI embeddings, semantic search, similarity matching, and high-performance vector storage.
+- [RabbitMQ](/docs/services/rabbitmq.md): Host RabbitMQ message broker on Coolify for reliable messaging, queuing, routing, and distributed system communication with AMQP protocol.
+- [Radarr](/docs/services/radarr.md): Automate movies on Coolify with Radarr for torrent/usenet downloads, quality management, metadata, and integration with download clients.
+- [Rallly](/docs/services/rallly.md): Schedule meetings on Coolify with Rallly for group polls, availability voting, and collaborative event planning without accounts required.
+- [Reactive Resume](/docs/services/reactive-resume.md): Build resumes on Coolify with Reactive Resume for free resume builder, templates, PDF export, and professional CV creation tool.
+- [Readeck](/docs/services/readeck.md): Save articles on Coolify with Readeck for read-later service, bookmarking, full-text search, and distraction-free reading experience.
+- [Redis Insight](/docs/services/redis-insight.md): Here you can find the documentation for hosting Redis Insight with Coolify.
+- [Redlib](/docs/services/redlib.md): Browse Reddit on Coolify with Redlib alternative frontend for privacy-focused Reddit browsing without tracking or JavaScript requirements.
+- [Rivet Engine](/docs/services/rivet-engine.md): Deploy Rivet Engine with Coolify for building and scaling stateful workloads with long-lived processes, durable state, and realtime capabilities.
+- [Rocket.Chat](/docs/services/rocketchat.md): Deploy Rocket.Chat on Coolify for team communication, video conferencing, file sharing, and open-source Slack alternative with federation.
+- [Rybbit](/docs/services/rybbit.md): Here you can find the documentation for hosting Rybbit with Coolify.
+- [Ryot](/docs/services/ryot.md): Track media on Coolify with Ryot for movies, TV shows, books, video games, exercises with ratings, reviews, and personal media database.
+- [Seafile](/docs/services/seafile.md): Sync files on Coolify with Seafile for secure cloud storage, team collaboration, file versioning, and enterprise-grade document management.
+- [SearXNG](/docs/services/searxng.md): Search privately on Coolify with SearXNG metasearch engine aggregating results from 70+ sources without tracking or personalization.
+- [Sequin](/docs/services/sequin.md): Stream database changes on Coolify with Sequin for CDC, event-driven architecture, webhooks, and real-time data synchronization workflows.
+- [Shlink](/docs/services/shlink.md): Shorten URLs on Coolify with Shlink for branded short links, QR codes, analytics, and self-hosted URL shortener with REST API.
+- [SigNoz](/docs/services/signoz.md): An observability platform native to OpenTelemetry with logs, traces and metrics.
+- [Siyuan](/docs/services/siyuan.md): A privacy-first, self-hosted, fully open source personal knowledge management software for organizing notes with block-based editing and bidirectional links.
+- [Slash](/docs/services/slash.md): Manage bookmarks on Coolify with Slash for self-hosted link shortener, collections, sharing, and personal URL management with tagging.
+- [Snapdrop](/docs/services/snapdrop.md): Transfer files on Coolify with Snapdrop for local network file sharing, AirDrop-style transfers, and instant peer-to-peer file exchange.
+- [Soketi](/docs/services/soketi.md): Deploy Soketi WebSocket server on Coolify for real-time messaging, Pusher-compatible protocol, and scalable WebSocket broadcasting.
+- [Soketi App Manager](/docs/services/soketi-app-manager.md): Manage Soketi apps on Coolify with application configuration, authentication, and WebSocket server administration interface.
+- [Sonarr](/docs/services/sonarr.md): Automate TV shows on Coolify with Sonarr for torrent/usenet downloads, quality profiles, episode tracking, and media automation.
+- [Sonatype Nexus](/docs/services/nexus.md): Run Nexus Repository on Coolify for artifact management, Docker registry, npm, Maven, PyPI package hosting, and DevOps dependency storage.
+- [SparkyFitness](/docs/services/sparkyfitness.md): Self-hosted alternative to MyFitnessPal with AI-powered nutrition assistance. Track nutrition, exercise, body measurements, and manage your fitness data with complete privacy.
+- [Statusnook](/docs/services/statusnook.md): Monitor status on Coolify with StatusNook for uptime monitoring, status pages, incident management, and service availability tracking.
+- [Stirling PDF](/docs/services/stirling-pdf.md): Process PDFs on Coolify with Stirling-PDF for merging, splitting, compression, conversion, OCR, and 50+ PDF manipulation operations.
+- [Strapi](/docs/services/strapi.md): Build APIs on Coolify with Strapi headless CMS for content management, REST/GraphQL APIs, admin panel, and customizable backend platform.
+- [Supabase](/docs/services/supabase.md): Deploy Supabase on Coolify as open-source Firebase alternative with Postgres database, authentication, storage, and real-time subscriptions.
+- [Supertokens](/docs/services/supertokens.md): Add authentication on Coolify with SuperTokens for login, session management, user administration, and Auth0 alternative SDKs.
+- [Swetrix](/docs/services/swetrix.md): Swetrix is a privacy-friendly and cookieless European web analytics alternative to Google Analytics.
+- [Syncthing](/docs/services/syncthing.md): Sync files on Coolify with Syncthing for continuous file synchronization, P2P data replication, and decentralized backup across devices.
+- [Tailscale Client](/docs/services/tailscale-client.md): Connect services securely with Tailscale on Coolify featuring WireGuard VPN, mesh networking, zero-config setup, and encrypted peer-to-peer connections.
+- [Teable](/docs/services/teable.md): Build databases on Coolify with Teable as Airtable alternative combining spreadsheet interface with database power and automation workflows.
+- [Tolgee](/docs/services/tolgee.md): Localize apps on Coolify with Tolgee for translation management, in-context editing, collaboration, and internationalization platform.
+- [Traccar](/docs/services/traccar.md): Track GPS on Coolify with Traccar for vehicle tracking, geofencing, reports, notifications, and fleet management with 170+ protocols.
+- [Transmission](/docs/services/transmission.md): Download torrents on Coolify with Transmission for lightweight BitTorrent client, web interface, encryption, and remote control.
+- [Trigger](/docs/services/trigger.md): Automate workflows on Coolify with Trigger.dev for background jobs, scheduled tasks, webhooks, and event-driven workflow automation.
+- [TriliumNext](/docs/services/triliumnext.md): Organize notes on Coolify with TriliumNext for hierarchical note-taking, scripting, encryption, and powerful knowledge management features.
+- [Typesense](/docs/services/typesense.md): Search instantly on Coolify with Typesense for typo-tolerant search engine, faceting, filtering, and lightning-fast full-text search API.
+- [Umami](/docs/services/umami.md): Track analytics on Coolify with Umami for privacy-focused website analytics, visitor insights, and cookieless web traffic monitoring.
+- [Unleash](/docs/services/unleash.md): Manage features on Coolify with Unleash for feature toggles, A/B testing, gradual rollouts, and enterprise feature flag management.
+- [Unsend](/docs/services/unsend.md): Send emails on Coolify with Unsend for developer-focused email API, templates, testing, and transactional email delivery service.
+- [Unstructured](/docs/services/unstructured.md): Extract data on Coolify with Unstructured.io for document parsing, PDFs, images, HTML, and ML-ready data preprocessing pipelines.
+- [Uptime Kuma](/docs/services/uptime-kuma.md): Monitor uptime on Coolify with Uptime Kuma for status pages, notifications, SSL checks, and beautiful server monitoring dashboard.
+- [Vaultwarden](/docs/services/vaultwarden.md): Store passwords on Coolify with Vaultwarden unofficial Bitwarden server for encrypted password vaults, 2FA, and credential management.
+- [Vert](/docs/services/vert.md): Deploy Vert.x on Coolify for reactive applications, microservices, event-driven architecture, and polyglot JVM framework development.
+- [Vikunja](/docs/services/vikunja.md): Manage tasks on Coolify with Vikunja for to-do lists, kanban boards, gantt charts, calendars, and team project organization.
+- [VitePress](/docs/applications/vitepress.md): Deploy VitePress documentation sites on Coolify with Vite, Vue, Nixpacks, and static site generation from Markdown files.
+- [Vvveb](/docs/services/vvveb.md): Build websites on Coolify with VvvebJs drag-and-drop website builder, templates, and visual web design tool without coding required.
+- [Wakapi](/docs/services/wakapi.md): Track coding time on Coolify with Wakapi for WakaTime-compatible time tracking, statistics, and developer productivity analytics.
+- [Weaviate](/docs/services/weaviate.md): Deploy Weaviate vector database on Coolify for AI-powered search, semantic understanding, ML model integration, and knowledge graphs.
+- [Web Check](/docs/services/web-check.md): Analyze websites on Coolify with Web-Check for SSL, DNS, headers, security, performance audits, and comprehensive site investigation.
+- [Weblate](/docs/services/weblate.md): Translate software on Coolify with Weblate for continuous localization, collaboration, version control, and open-source translation management.
+- [Whoogle](/docs/services/whoogle.md): Search Google privately on Coolify with Whoogle for anonymous Google searches without tracking, ads, or AMP with self-hosted proxy.
+- [Wikijs](/docs/services/wikijs.md): Deploy Wiki.js on Coolify for modern wiki with markdown, Git sync, powerful search, and beautiful documentation platform interface.
+- [Windmill](/docs/services/windmill.md): Build workflows on Coolify with Windmill for scripts, flows, UIs, and developer-centric workflow automation with TypeScript/Python.
+- [Wireguard Easy](/docs/services/wireguard-easy.md): Deploy WireGuard VPN on Coolify with WireGuard Easy for simple VPN setup, client management, and secure network tunneling interface.
+- [WordPress](/docs/services/wordpress.md): Run WordPress on Coolify for blogging, CMS, e-commerce with plugins, themes, and world's most popular website building platform.
+- [Yamtrack](/docs/services/yamtrack.md): Track time on Coolify with YAMTrack for project time logging, invoicing, reports, and freelancer productivity management tool.
+- [Zipline](/docs/services/zipline.md): Share files on Coolify with Zipline for screenshot sharing, file uploads, URL shortening, and personal media hosting with embeds.
