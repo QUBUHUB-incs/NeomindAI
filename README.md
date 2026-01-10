@@ -14,7 +14,7 @@ All hardware, configurations, and manuals are included here in one structured ov
 
 **File:** `neomind_board.txt`  
 **Function:** Quick text-based visual reference of the board layout.
-
+```
 Neomind Board v1
 +——————————+
 | USB PORT                     |
@@ -25,12 +25,11 @@ Neomind Board v1
 | Power Pins GND,5V,3.3V,VIN   |
 | Reset Button                 |
 +——————————+
-
 </details>
-
+```
 <details>
 <summary>CFML / XML Configuration</summary>
-
+	
 **File:** `neomind_hardware.cfml`  
 **Function:** Machine-readable board definition for simulation and automation.
 
@@ -65,11 +64,12 @@ Neomind Board v1
 
 <details>
 <summary>Markdown Documentation</summary>
+```
 
-
-File: neomind_board.md
+File: `neomind_board.md`
 Function: Markdown version of ASCII diagram, suitable for GitHub or online docs.
 
+```cfml
 # Neomind Board v1
 
 Neomind Board v1
@@ -90,10 +90,11 @@ Neomind Board v1
 <details>
 <summary>TXT File</summary>
 
-
-File: neomind_board.txt
+```
+File: `neomind_board.txt`
 Function: Plain text for editors or quick terminal reference.
 
+```cgi
 Neomind Board v1
 +------------------------------+
 | USB PORT                     |
@@ -109,11 +110,11 @@ Neomind Board v1
 
 <details>
 <summary>PNG Diagram</summary>
+```
 
-
-File: neomind_board_styled.png
+File: `neomind_board_styled.png`
 Function: Visual color-coded board layout.
-
+```cpp
 </details>
 
 
@@ -127,8 +128,7 @@ Function: Full multi-page manual including diagrams, CFML reference, and sample 
 [Download PDF](data:application/pdf;base64,JVBERi0xLjQKJcfs…(truncated for brevity)…)
 
 </details>
-
-
+```
 
 ⸻
 
