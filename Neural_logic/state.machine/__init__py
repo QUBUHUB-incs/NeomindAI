@@ -1,0 +1,55 @@
+import enum
+
+class State(enum.Enum):
+    SEARCHING = 1
+    GUARDING = 2
+
+class SwarmRobot:
+    def __init__(self, robot_id, start_pos):
+        self.id = robot_id
+        self.pos = np.array(start_pos, dtype=float)
+        self.vel = np.zeros(2)
+        self.state = State.SEARCHING
+        self.belief_goal = np.array([50.0, 50.0])
+        self.pid = PID(kp=0.6, ki=0.01, kd=0.1)
+        
+        # Sub-swarming thresholds
+        self.guard_limit = 4  # Max robots allowed to stay at one target
+
+    def handle_subswarming(self, neighbors):
+        """Logic to decide whether to stay at target or keep searching."""
+        if self.state == State.SEARCHING and np.linalg.norm(self.pos - self.belief_goal) < 5.0:
+            # Count how many neighbors are already guarding this spot
+            guards_nearby = sum(1 for n in neighbors if n.state == State.GUARDING)
+            
+            if guards_nearby < self.guard_limit:
+                self.state = State.GUARDING
+                print(f"Robot {self.id}: Target Secured. Switching to GUARDING.")
+            else:
+                # Capacity full! Reset goal to a new random sector and keep scouting
+                self.state = State.SEARCHING
+                self.belief_goal = np.random.rand(2) * 100
+                print(f"Robot {self.id}: Target crowded. Continuing SEARCH.")
+
+    def compute_forces(self, obstacles, neighbors):
+        # 1. State-Dependent Velocity
+        if self.state == State.GUARDING:
+            # Orbit or stay still at the target
+            f_att = 0.8 * (self.belief_goal - self.pos) - 0.2 * self.vel 
+        else:
+            # Standard attraction to the current search belief
+            f_att = 0.4 * (self.belief_goal - self.pos)
+
+        # 2. Peer Logic
+        f_sep = np.zeros(2)
+        for n in neighbors:
+            dist = np.linalg.norm(self.pos - n.pos)
+            if dist < 6.0:
+                f_sep += (self.pos - n.pos) / (dist**2)
+
+        return f_att + f_sep
+
+    def step(self, real_target, obstacles, neighbors):
+        self.handle_subswarming(neighbors)
+        force = self.compute_forces(obstacles, neighbors)
+        # ... (PID and Position update same as previous)
