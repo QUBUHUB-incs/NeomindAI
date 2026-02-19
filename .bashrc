@@ -4,9 +4,6 @@ set -euo pipefail
 
 # On Windows, try "python -m http.server" or "py -3 -m http.server"
 python3 -m http.server
-
-```cpp
-
 PYTHON=python3
 VENV_DIR=.venv
 
@@ -55,8 +52,6 @@ ros2 launch rtabmap_ros rtabmap.launch.py \
 $ truss init hello-world
 ? 📦 Name this model: HelloWorld
 Truss HelloWorld was created in ~/hello-world
-
-`
 touch Brain/README.md Brain/LICENSE Brain/pyproject.toml Brain/requirements.txt
 touch Brain/config/default.yaml
 touch Brain/brain/__init__.py
@@ -69,8 +64,6 @@ touch Brain/examples/run_lidar_example.py Brain/examples/run_snn_example.py
 touch Brain/tests/test_sensors.py Brain/tests/test_models.py Brain/tests/test_swarm.py
 touch Brain/docker/Dockerfile
 touch Brain/scripts/run_simulation.py
-’
-
 curl https://pyenv.run | bash
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
 echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
@@ -148,7 +141,7 @@ cd SERAI
           ▼
       Real World
 
-  mkdir -p Brain/config
+mkdir -p Brain/config
 mkdir -p Brain/brain/sensors
 mkdir -p Brain/brain/models
 mkdir -p Brain/brain/swarm
