@@ -81,7 +81,6 @@ ENV_NAME="truss_env"
 pyenv virtualenv 3.11.0 $ENV_NAME
 pyenv activate $ENV_NAME
 pip install --upgrade truss 'pydantic>=2.0.0'
-```
 Neurobot/
 ├── ros2/
 │   ├── launch/
