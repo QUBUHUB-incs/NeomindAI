@@ -93,7 +93,7 @@ Neomind Board v1
 File: `neomind_board.txt`
 Function: Plain text for editors or quick terminal reference.
 
-```cgi
+```txt
 Neomind Board v1
 +------------------------------+
 | USB PORT                     |
