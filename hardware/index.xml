@@ -1,7 +1,7 @@
 <neomind_hardware>
     <name>Neomind Board v1</name>
     <usb_port>
-        <type>USB-B</type>
+        <type>USB</type>
         <supports>power, serial, firmware_upload</supports>
     </usb_port>
     <microcontroller>
@@ -28,3 +28,12 @@
 
 <details>
 <summary>Markdown Documentation</summary>
+		
+	
+<!-- Define a HTTP/1.1 Connector on port 8443, JSSE BIO implementation -->
+<Connector protocol="org.apache.coyote.http11.Http11Protocol"
+           port="8443" .../>
+
+<!-- Define a HTTP/1.1 Connector on port 8443, JSSE NIO implementation -->
+<Connector protocol="org.apache.coyote.http11.Http11NioProtocol"
+           port="8443" .../>
