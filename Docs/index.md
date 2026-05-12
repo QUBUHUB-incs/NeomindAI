@@ -1,5 +1,5 @@
 # Neomind Board v1
-
+```png
 Neomind Board v1
 +——————————+
 | USB PORT                     |
@@ -10,14 +10,17 @@ Neomind Board v1
 | Reset Button                 |
 +——————————+
 
-
-
+```
+```md
 </details>
 
 
 <details>
 <summary>TXT File</summary>
 <details>
+```
+```xml
+
 <summary>PDF Manual</summary>
 
 File: neomind_hardware_manual.pdf
@@ -29,8 +32,9 @@ Function: Full multi-page manual including diagrams, CFML reference, and sample 
 	
 **File:** `neomind_hardware.cfml`  
 **Function:** Machine-readable board definition for simulation and automation.
-  ```cfml
-<neomind_hardware>
+ ```       
+```cfml
+		<neomind_hardware>
     <name>Neomind Board v1</name>
     <usb_port>
         <type>USB-B</type>
