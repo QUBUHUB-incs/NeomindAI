@@ -1,19 +1,24 @@
-⸻
+---
+File: neomind_hardware_manual.pdf
+Function: Full multi-page manual including diagrams, CFML reference, and sample code
+---
+
 # NeomindAI Deluxe Documentation
 
-Welcome to **NeomindAI**, your next-generation cognition engine.  
+Welcome to ***NeomindAI***, your next-generation cognition engine.  
 All hardware, configurations, and manuals are included here in one structured overview.
 
 ---
 
-## Files Overview
+> ## Files Overview
 
 <details>
 <summary>ASCII Diagram</summary>
 
-**File:** `neomind_board.txt`  
+> **File:** `neomind_board.txt`  
 **Function:** Quick text-based visual reference of the board layout.
-```
+> 
+```md
 Neomind Board v1
 +——————————+
 | USB PORT                     |
@@ -25,14 +30,14 @@ Neomind Board v1
 | Reset Button                 |
 +——————————+
 </details>
-```
+``
 <details>
 <summary>CFML / XML Configuration</summary>
-	
+```
 **File:** `neomind_hardware.cfml`  
 **Function:** Machine-readable board definition for simulation and automation.
-
-```xml
+> 
+```cfml
 <neomind_hardware>
     <name>Neomind Board v1</name>
     <usb_port>
@@ -63,12 +68,15 @@ Neomind Board v1
 
 <details>
 <summary>Markdown Documentation</summary>
+
+File: neomind_hardware_manual.pdf
+Function: Full multi-page manual including diagrams, CFML reference, and sample code
 ```
 
 File: `neomind_board.md`
 Function: Markdown version of ASCII diagram, suitable for GitHub or online docs.
-
-```cfml
+> 
+```md
 # Neomind Board v1
 
 Neomind Board v1
@@ -92,8 +100,9 @@ Neomind Board v1
 ```
 File: `neomind_board.txt`
 Function: Plain text for editors or quick terminal reference.
+> 
 
-```txt
+ ```cfml
 Neomind Board v1
 +------------------------------+
 | USB PORT                     |
@@ -110,47 +119,49 @@ Neomind Board v1
 <details>
 <summary>PNG Diagram</summary>
 ```
+File: neomind_hardware_manual.pdf
+Function: Full multi-page manual including diagrams, CFML reference, and sample code
 
-File: `neomind_board_styled.png`
+File: `neomind_board_styled.pdf`
 Function: Visual color-coded board layout.
-```cpp
+> 
+```pdf
 </details>
 
 
 <details>
 <summary>PDF Manual</summary>
 
-
-File: neomind_hardware_manual.pdf
-Function: Full multi-page manual including diagrams, CFML reference, and sample code.
-
 [Download PDF](data:application/pdf;base64,JVBERi0xLjQKJcfs…(truncated for brevity)…)
 
 </details>
+
+File: neomind_hardware_manual.pdf
+Function: Full multi-page manual including diagrams, CFML reference, and sample code
 ```
-
+> [neomind.ai](https://github.com/QUBUHUB-incs/NeomindAI/docs/index.html#index.md)
 ⸻
-
-Quickstart
-
+``
+# Quickstart
+ ```bash
 git clone https://github.com/QUBUHUB-incs/NeomindAI.git
 cd NeomindAI
 npm install
 npm run dev
-
+```
 
 ⸻
 
-Notes
+
+> Notes:
 	•	ASCII/Markdown for reading.
 	•	CFML for machine-readable configuration.
 	•	PNG/PDF for visual reference.
 	•	Fully self-contained: everything embedded as Base64.
 	•	Perfect as a Dullo-style interactive homepage.
 
----
 
-```c
+> ```pas
 Sensors
   ↓
 Sensory Cortex
