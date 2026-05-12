@@ -7,11 +7,11 @@ conda install autoconf automake libtool pkg-config
 set -euo pipefail
 
 
+
 # On Windows, try "python -m http.server" or "py -3 -m http.server"
 python3 -m http.server
 
 ```cpp
-
 PYTHON=python3
 VENV_DIR=.venv
 
