@@ -2,11 +2,12 @@
 
 > Creates a new document within an existing knowledge base by uploading a file.
 
-
+ 
 
 ## API
 
-````yaml en/api-reference/openapi_knowledge.json post /datasets/{dataset_id}/document/create-by-file
+````yaml
+en/api-reference/openapi_knowledge.json post /datasets/{dataset_id}/document/create-by-file
 openapi: 3.0.1
 info:
   title: Knowledge API
