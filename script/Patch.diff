@@ -1,0 +1,986 @@
+From e5503f4113555edc0197b37429a156678e9cdce5 Mon Sep 17 00:00:00 2001
+From: auraecosystem <sandraisom@icloud.com>
+Date: Wed, 10 Jun 2026 03:02:05 +0100
+Subject: [PATCH 1/5] Create README.aDoc
+
+Signed-off-by: auraecosystem <sandraisom@icloud.com>
+---
+ .circle-ci/README.aDoc | 265 +++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 265 insertions(+)
+ create mode 100644 .circle-ci/README.aDoc
+
+diff --git a/.circle-ci/README.aDoc b/.circle-ci/README.aDoc
+new file mode 100644
+index 0000000..08cf5e5
+--- /dev/null
++++ b/.circle-ci/README.aDoc
+@@ -0,0 +1,265 @@
++> For the complete documentation index, see [llms.txt](https://circleci.com/docs/llms.txt)
++
++# Hello world
++
++This page provides configuration examples to get started with a basic pipeline using any execution environment.
++
++## Prerequisites
++
++*   A CircleCI account connected to your code. You can [sign up for free](https://circleci.com/signup/).
++    
++*   A code repository you want to build on CircleCI.
++    
++*   Follow the [Create a Project](https://circleci.com/docs/guides/getting-started/create-project/) guide to connect your repository to CircleCI. You can then use the examples below to configure a basic pipeline using any execution environment.
++    
++
++**Using Docker?** Authenticating Docker pulls from image registries is recommended when using the Docker execution environment. Authenticated pulls allow access to private Docker images, and may also grant higher rate limits, depending on your registry provider. For further information see [Using Docker authenticated pulls](https://circleci.com/docs/guides/execution-managed/private-images/).
++
++## Echo hello world
++
++These examples add a job called `hello-job` that prints `hello world` to the console.
++
++**Docker:**
++
++The job `hello-job` spins up a container running a pre-built CircleCI Docker image for Node. Refer to [Using the Docker Execution Environment](https://circleci.com/docs/guides/execution-managed/using-docker/) page for more information.
++
++`````````
++version: 2.1
++
++jobs:
++  hello-job:
++    docker:
++      - image: cimg/node:17.2.0 # the primary container, where your job's commands are run
++    steps:
++      - checkout # check out the code in the project directory
++      - run: echo "hello world" # run the `echo` command
++
++workflows:
++  my-workflow:
++    jobs:
++      - hello-job
++`````````
++
++**Linux VM:**
++
++The job `hello-job` spins up a Linux virÃ¢â¬ ual machine running a [Ubuntu machine image](https://circleci.com/developer/images?imageType=machine). Refer to [Using the Linux VM Execution Environment](https://circleci.com/docs/guides/execution-managed/using-linuxvm/) page for more information.
++
++`````````
++version: 2.1
++
++jobs:
++  hello-job:
++    machine:
++      image: ubuntu-2204:2022.07.1
++    steps:
++      - checkout # check out the code in the project directory
++      - run: echo "hello world" # run the `echo` command
++
++workflows:
++  my-workflow:
++    jobs:
++      - hello-job
++`````````
++
++**macOS:**
++
++The job `hello-job` spins up a macOS virtual machine running the specified Xcode version. Refer to [Using the macOS Execution Environment](https://circleci.com/docs/guides/execution-managed/using-macos/) page for more information.
++
++`````````
++version: 2.1
++
++jobs:
++  hello-job:
++    macos:
++      xcode: 26.4.0
++    resource_class: m4pro.medium
++    steps:
++      - checkout # check out the code in the project directory
++      - run: echo "hello world" # run the `echo` command
++
++workflows:
++  my-workflow:
++    jobs:
++      - hello-job
++`````````
++
++**Windows:**
++
++The job `hello-job` spins up a Windows virtual machine using the default executor specified by the [Windows orb](https://circleci.com/developer/orbs/orb/circleci/windows#usage-run_default). Refer to [Using the Windows Execution Environment](https://circleci.com/docs/guides/execution-managed/using-windows/) page for more information.
++
++`````````
++version: 2.1
++
++orbs:
++  win: circleci/windows@5.0.0 # The Windows orb gives you everything you need to start using the Windows executor.
++
++jobs:
++  hello-job:
++    executor:
++      name: win/default # executor type
++      size: "medium" # resource class, can be "medium", "large", "xlarge", "2xlarge", defaults to "medium" if not specified
++
++    steps:
++      # Commands are run in a Windows virtual machine environment
++      - checkout
++      - run: Write-Host 'Hello, Windows'
++
++workflows:
++  my-workflow:
++    jobs:
++      - hello-job
++`````````
++
++**GPU:**
++
++The GPU execution environment is available on the [Scale](https://circleci.com/pricing/) Plan.
++
++The job `hello-job` spins up a GPU-enabled virtual machine using the machine executor. GPU images are available for [Windows](https://circleci.com/docs/reference/configuration-reference/#available-windows-gpu-image) and [Linux](https://circleci.com/docs/reference/configuration-reference/#available-linux-gpu-images). Refer to [Using the GPU Execution Environment](https://circleci.com/docs/guides/execution-managed/using-gpu/) page for more information.
++
++`````````
++version: 2.1
++
++jobs:
++  hello-job:
++    machine:
++      image: linux-cuda-12:default
++      resource_class: gpu.nvidia.medium
++    steps:
++      - checkout # check out the code in the project directory
++      - run: echo "hello world" # run the `echo` command
++
++workflows:
++  my-workflow:
++    jobs:
++      - hello-job
++`````````
++
++**Arm VM:**
++
++The job `hello-job` spins up an \[Arm (Linux) virtual machine\] using the machine executor. Refer to [Using the Arm VM Execution Environment](https://circleci.com/docs/guides/execution-managed/using-arm/) page for more information.
++
++`````````
++version: 2.1
++
++jobs:
++  hello-job:
++    machine:
++      image: ubuntu-2004:202101-01
++    resource_class: arm.medium
++    steps:
++      - checkout # check out the code in the project directory
++      - run: echo "hello world" # run the `echo` command
++
++workflows:
++  my-workflow:
++    jobs:
++      - hello-job
++`````````
++
++Figure 1. Hello world job output
++
++If you get a `No Config Found` error, it may be that you used `.yaml` file extension. Be sure to use `.yml` file extension to resolve this error.
++
++## Echo hello world on CircleCI Server
++
++To build in a macOS execution environment on server use [Self-Hosted Runner](https://circleci.com/docs/guides/execution-runner/runner-overview/).
++
++These examples add a job called `hello-job` that prints `hello world` to the console.
++
++**Docker:**
++
++The job `hello-job` spins up a container running a pre-built CircleCI Docker image for Node. Refer to [Using the Docker Execution Environment](https://circleci.com/docs/guides/execution-managed/using-docker/) page for more information.
++
++`````````
++version: 2.1
++
++jobs:
++  hello-job:
++    docker:
++      - image: cimg/node:17.2.0 # the primary container, where your job's commands are run
++    steps:
++      - checkout # check out the code in the project directory
++      - run: echo "hello world" # run the `echo` command
++
++workflows:
++  my-workflow:
++    jobs:
++      - hello-job
++`````````
++
++**Linux VM:**
++
++The job `hello-job` spins up a Linux virÃ¢â¬ ual machine running a [Ubuntu machine image](https://circleci.com/developer/images?imageType=machine). Refer to [Using the Linux VM Execution Environment](https://circleci.com/docs/guides/execution-managed/using-linuxvm/) page for more information.
++
++`````````
++version: 2.1
++
++jobs:
++  hello-job:
++    machine: true
++    steps:
++      - checkout # check out the code in the project directory
++      - run: echo "hello world" # run the `echo` command
++
++workflows:
++  my-workflow:
++    jobs:
++      - hello-job
++`````````
++
++**Windows:**
++
++The job `hello-job` spins up a Windows virtual machine using the default executor specified by the [Windows orb](https://circleci.com/developer/orbs/orb/circleci/windows#usage-run_default). Refer to [Using the Windows Execution Environment](https://circleci.com/docs/guides/execution-managed/using-windows/) page for more information.
++
++`````````
++version: 2.1
++
++jobs:
++  hello-job:
++    machine:
++      image: windows-default
++
++    steps:
++      # Commands are run in a Windows virtual machine environment
++      - checkout
++      - run: Write-Host 'Hello, Windows'
++
++workflows:
++  my-workflow:
++    jobs:
++      - hello-job
++`````````
++
++**Arm:**
++
++The job `hello-job` spins up an Arm (Ubuntu 22.04) virtual machine. Refer to [Using the Arm VM Execution Environment](https://circleci.com/docs/guides/execution-managed/using-arm/) page for more information.
++
++`````````
++version: 2.1
++
++jobs:
++  hello-job:
++    machine:
++      image: arm-default
++    resource_class: arm.medium
++    steps:
++      - checkout # check out the code in the project directory
++      - run: echo "hello world" # run the `echo` command
++
++workflows:
++  my-workflow:
++    jobs:
++      - hello-job
++`````````
++
++Figure 2. Hello world job output
++
++If you get a `No Config Found` error, it may be that you used `.yaml` file extension. Be sure to use `.yml` file extension to resolve this error.
++
++## Next steps
++
++*   See the [Concepts](https://circleci.com/docs/guides/about-circleci/concepts/) page for a summary of CircleCI-specific concepts.
++    
++*   Refer to the [Workflows](https://circleci.com/docs/guides/orchestrate/workflows/) page for examples of orchestrating job runs with concurrent, sequential, scheduled, and manual approval workflows.
++    
++*   Find complete reference information for all keys and execution environments in the [CircleCI Configuration Reference](https://circleci.com/docs/reference/configuration
+
+From 85d72fef33106ac68c11cf8aed3b17427155a4a0 Mon Sep 17 00:00:00 2001
+From: auraecosystem <sandraisom@icloud.com>
+Date: Wed, 10 Jun 2026 03:08:05 +0100
+Subject: [PATCH 2/5] Create Circleci-docs.md
+
+Signed-off-by: auraecosystem <sandraisom@icloud.com>
+---
+ Docs/Circleci-docs.md | 296 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 296 insertions(+)
+ create mode 100644 Docs/Circleci-docs.md
+
+diff --git a/Docs/Circleci-docs.md b/Docs/Circleci-docs.md
+new file mode 100644
+index 0000000..76a7975
+--- /dev/null
++++ b/Docs/Circleci-docs.md
+@@ -0,0 +1,296 @@
++# CircleCI docs site: Contributing Guide
++
++This guide provides comprehensive information for contributors to the CircleCI docs project.
++
++## Table of Contents
++- [Ways to Contribute](#ways-to-contribute)
++- [Setting Up Your Development Environment](#setting-up-your-development-environment)
++- [Contribution Workflow](#contribution-workflow)
++- [Code Style Guidelines](#code-style-guidelines)
++- [Testing Guidelines](#testing-guidelines)
++- [Documentation Guidelines](#documentation-guidelines)
++- [Review Process](#review-process)
++- [Release Process](#release-process)
++
++## Ways to Contribute
++
++There are several ways to contribute to the CircleCI docs project:
++
++1. **Documentation content**: Add or improve documentation pages
++2. **Technical improvements**: Enhance the site's functionality
++3. **UI improvements**: Improve the user interface and experience
++4. **Bug fixes**: Fix issues with the site or content
++5. **Feature requests**: Suggest new features or improvements. You can do this by submitting a [GitHub issue](https://github.com/circleci/circleci-docs/issues) or using the feedback form on the docs site itself.
++
++### Types of Contributions Needed
++
++- Writing tutorials and how-to guides
++- Improving API and reference documentation
++- Fixing typos and clarifying explanations
++- Developing new UI components
++- Improving build performance
++- Adding new functionality to the site
++
++## Setting Up Your Development Environment
++
++### Prerequisites
++
++- **Node.js**: v22 or later
++- **npm**: v8 or later
++- **Git**: Latest version recommended
++- A code editor of your choice (VS Code, IntelliJ, etc.)
++
++### Initial Setup
++
++1. **Fork the repository**:
++   - Visit [https://github.com/circleci/circleci-docs](https://github.com/circleci/circleci-docs)
++   - Click the "Fork" button to create your own copy. If you are a CircleCI employee you can simply clone the repo rather than creating a fork.
++
++2. **Clone your fork**:
++   ```bash
++   git clone https://github.com/YOUR-USERNAME/circleci-docs.git
++   cd circleci-docs
++   ```
++
++3. **Add the upstream remote**:
++   ```bash
++   git remote add upstream https://github.com/circleci/circleci-docs.git
++   ```
++
++4. **Install dependencies**:
++   ```bash
++   npm ci
++   ```
++
++## Contribution Workflow
++
++### Creating a Branch
++
++Create a new branch for your work:
++
++```bash
++git checkout -b type/description
++```
++
++Branch naming conventions:
++- `docs/`: Documentation changes
++- `feature/`: New features
++- `fix/`: Bug fixes
++- `refactor/`: Code refactoring
++- `style/`: Style and UI changes
++- `test/`: Adding or modifying tests
++
++Example: `docs/add-kubernetes-guide` or `fix/broken-navigation`
++
++### Making Changes
++
++1. **Update your branch**:
++   ```bash
++   git checkout main
++   git pull upstream main
++   git checkout your-branch-name
++   git rebase main
++   ```
++
++2. **Make your changes**:
++   - Edit files as needed
++   - Follow the code style guidelines
++   - Add tests if applicable
++
++3. **Test your changes locally**:
++   ```bash
++   npm run start:dev
++   ```
++
++4. **Commit your changes**:
++   ```bash
++   git add .
++   git commit -m "Your commit message"
++   ```
++
++   Commit message format:
++   ```
++   type(scope): Brief description
++
++   Longer description if needed
++
++   Fixes #123
++   ```
++
++   Types:
++   - `docs`: Documentation changes
++   - `feat`: New features
++   - `fix`: Bug fixes
++   - `refactor`: Code refactoring
++   - `style`: Style changes
++   - `test`: Test-related changes
++
++### Submitting a Pull Request
++
++1. **Push your branch**:
++   ```bash
++   git push origin your-branch-name
++   ```
++
++2. **Create a pull request**:
++   - Go to your fork on GitHub
++   - Click "Pull Request"
++   - Select your branch and fill in the PR template
++   - Add reviewers if you know who should review your changes
++
++3. **Address feedback**:
++   - Make requested changes
++   - Push additional commits
++   - Respond to comments
++
++4. **Update your PR if needed**:
++   If main has been updated while your PR was open:
++   ```bash
++   git checkout your-branch-name
++   git pull upstream main --rebase
++   git push origin your-branch-name --force
++   ```
++
++## Code Style Guidelines
++
++### JavaScript
++
++- Follow the ESLint configuration in the project
++- Use modern JavaScript (ES6+) features
++- Document functions with JSDoc comments
++- Use meaningful variable and function names
++- Limit line length to 100 characters
++
++Example:
++
++```javascript
++/**
++ * Performs a specific task
++ * @param {string} input - Description of input
++ * @returns {Object} Description of return value
++ */
++function performTask(input) {
++  const result = doSomething(input);
++  return result;
++}
++```
++
++### CSS
++
++- Follow the project's TailwindCSS conventions
++- Use utility classes when appropriate
++- Extract components for repeated patterns
++- Use meaningful class names for custom components
++
++### AsciiDoc
++
++- Follow the content authoring guidelines in [CONTENT_AUTHORING.md](CONTENT_AUTHORING.md)
++- Use consistent heading levels
++- Include proper metadata and attributes
++- Use the appropriate formatting for different content types
++
++## Testing Guidelines
++
++### Types of Tests
++
++- **Content validation**: This is a manual text. As far as reasonably possible all docs changes and additions should be manually tested. A member of the CircleCI docs team (or other team) should run through the documented task following any steps outlined in the doc closely to check they are both correct and complete, no missing steps where users could get stuck. Changes to technical content should be reviewed by a member of the engineering team that owns the feature.
++- **Content style checking**: We use [Vale](https://vale.sh/) for content linting. We have vale rules set up to enforce style. You can take a look at these rules in the `/styles` folder. Vale runs in our CI/CD pipeline so you can check for error and warnings when pushing your changes to GitHub. You can also install vale locally on your machine and run vale on the file you are editing or even using an [extension in your IDE](https://marketplace.visualstudio.com/items?itemName=chrischinchilla.vale-vscode).
++- **Link checking**: Verifying all links work correctly. Links are checked as part of our CI build
++- **UI testing**: Checking for visual and interactive issues (we do not currently have any UI testing set up)
++- **Build testing**: Ensuring the site builds correctly
++
++### Running Tests
++
++- **Content verification**:
++  ```bash
++  npm run start:dev
++  ```
++  Review the site locally for content issues.
++
++- **Link checking**:
++  The CI pipeline includes automatic link checking. Check the outcome of the `Validate` job for issues.
++
++## Documentation Guidelines
++
++### Code Documentation
++
++- Document all functions, classes, and modules
++- Explain complex algorithms and decisions
++- Use inline comments for non-obvious code
++- Keep code documentation up-to-date with changes
++
++### Project Documentation
++
++- Update the README.md for significant changes
++- Document new features and components
++- Update usage instructions when needed
++- Add examples for new functionality
++
++## Review Process
++
++### Pull Request Review
++
++All contributions go through a review process:
++
++1. **Automated checks**: CI system runs tests and checks
++2. **Code review**: Maintainers review the code for:
++   - Code quality and style
++   - Security considerations
++   - Performance impact
++   - Test coverage
++3. **Content review**: For documentation changes:
++   - Technical accuracy
++   - Clarity and completeness
++   - Adherence to style guide
++
++### What Reviewers Look For
++
++- Does the change solve the stated problem?
++- Is the code well-structured and maintainable?
++- Is the documentation clear and complete?
++- Are there adequate tests?
++- Does it follow project conventions?
++
++During the review process further discussion might be needed. This will happen in comments in the PR. The docs team review might push changes to your branch to fix style and formatting issues but larger issues will be discussed first.
++
++The speed at which we can process changes will depend on the scope of the change and the existing workload that the docs team has at that time. We would try to respond to contributions within two days of submission.
++
++### After Approval
++
++Once your PR is approved it will be merged by a maintainer. Your contribution will be published immediately (well, around 4 minutes for the pipeline to build!)
++
++## Release Process
++
++### Release Schedule
++
++The CircleCI docs site follows a continuous delivery model:
++
++- Documentation changes: Released as soon as they're approved
++- Technical changes: Released as and when ready
++- Emergency fixes: Released as needed
++
++### Release Process
++
++1. Changes are merged to `main`
++2. CI pipeline builds and tests the site
++3. Deployment to production
++
++### Versioning
++
++The project follows [Semantic Versioning](https://semver.org/):
++
++- **MAJOR**: Backward-incompatible changes
++- **MINOR**: New functionality (backward-compatible)
++- **PATCH**: Bug fixes (backward-compatible)
++
++For the documentation content itself, individual pages aren't versioned, but the site structure supports versioned components through Antora's versioning system.
++
++## Getting Help
++
++If you need help with your contribution:
++
++- **Issues**: Create an issue on GitHub
++- **Discussions**: Use GitHub Discussions for questions
++- **Documentation**: Refer to the technical docs
++
++Thank you for contributing to the CircleCI docs site!
+
+From 6c6a1eef40ef6886d67aff01dd08968b2eae009b Mon Sep 17 00:00:00 2001
+From: auraecosystem <sandraisom@icloud.com>
+Date: Wed, 10 Jun 2026 03:09:30 +0100
+Subject: [PATCH 3/5] Create Integration.rdoc
+
+Signed-off-by: auraecosystem <sandraisom@icloud.com>
+---
+ Docs/workflow/Integration.rdoc | 214 +++++++++++++++++++++++++++++++++
+ 1 file changed, 214 insertions(+)
+ create mode 100644 Docs/workflow/Integration.rdoc
+
+diff --git a/Docs/workflow/Integration.rdoc b/Docs/workflow/Integration.rdoc
+new file mode 100644
+index 0000000..61d2e2e
+--- /dev/null
++++ b/Docs/workflow/Integration.rdoc
+@@ -0,0 +1,214 @@
++# API Documentation Integration
++
++This project integrates API documentation with the Antora documentation site, providing two versions of API docs that are built during the main site build process and served alongside the main documentation.
++
++## Architecture Overview
++
++### Build Process
++
++1. **UI Build**: Antora UI bundle is created
++2. **Antora Build**: Main documentation site is generated
++3. **API Docs Build**: Both API v1 and v2 documentation are built and integrated
++
++### API Documentation Versions
++
++**API v1** - Static Documentation
++
++- Source: `api-v1/` directory (complete static site)
++- Build: Simple file copying
++- Output: `build/api/v1/` (preserves all assets: fonts, images, CSS, JS)
++- URL: `/api/v1/`
++
++**API v2** - Live Documentation
++
++- Source: Live CircleCI API (`https://circleci.com/api/v2/openapi.json`)
++- Build: Sophisticated pipeline with fetching, patching, bundling, and HTML generation
++- Output: `build/api/v2/index.html`
++- URL: `/api/v2/`
++
++## File Structure
++
++```
++project-root/
++├── api-v1/                    # Static API v1 documentation
++│   ├── index.html            # Main v1 docs (217KB)
++│   ├── fonts/                # Font assets
++│   ├── images/               # Image assets
++│   ├── javascripts/          # JS assets
++│   └── stylesheets/          # CSS assets
++├── openapi-patch.json        # JSON patches for v2 API customization
++├── redocly.yaml             # Redocly config (currently unused in build)
++├── gulp.d/tasks/
++│   └── build-api-docs.js    # API documentation build pipeline
++└── build/                   # Generated output
++    └── api/
++        ├── v1/              # Complete static v1 site
++        └── v2/              # Generated v2 documentation
++            └── index.html   # Single-page API docs (1.6MB)
++```
++
++## Build Pipeline Details
++
++### API v1 Build (Simple)
++
++1. Check if `api-v1/` directory exists
++2. Copy entire directory structure to `build/api/v1/`
++3. Preserve all assets (fonts, images, CSS, JS)
++
++### API v2 Build (Sophisticated)
++
++1. **Fetch**: Download live OpenAPI spec from CircleCI API
++2. **Prepare**: Ready spec for processing (future code sample enrichment)
++3. **Patch**: Apply JSON patches from `openapi-patch.json`
++4. **Bundle**: Optimize spec and remove unused components
++5. **Lint**: Quality check the processed spec
++6. **Build**: Generate HTML documentation with Redocly CLI
++7. **Cleanup**: Remove temporary processing files
++
++## Navigation Integration
++
++### Header Dropdown
++
++- "API Reference" button in main site header
++- Dropdown shows "API v1" and "API v2" options
++- Implemented in `ui/src/partials/header-content.hbs`
++
++### Sidebar Navigation
++
++- API links in component explorer navigation
++- Links appear in reference section sidebar
++- Implemented in `ui/src/partials/component-explorer-nav.hbs`
++
++### Content Page Links
++
++- Direct links from documentation pages
++- Uses relative paths `/api/v1/` and `/api/v2/`
++- Implemented in Antora content files
++
++## Build Commands
++
++```bash
++# Build everything (UI + Antora + API docs)
++npm run build:docs
++
++# Build just API documentation
++npm run build:api-docs
++
++# Development server with auto-rebuild
++npm run start:dev
++```
++
++## Configuration and Customization
++
++### API v1 Customization
++
++- Edit files directly in `api-v1/` directory
++- Changes appear immediately on next build
++- Maintains complete static site structure
++
++### API v2 Customization
++
++- **Content**: Edit `openapi-patch.json` to modify the API spec
++- **Styling**: Modify Redocly CLI build command arguments
++- **Processing**: Edit pipeline steps in `gulp.d/tasks/build-api-docs.js`
++
++### JSON Patching System
++
++The `openapi-patch.json` file allows customizing the live CircleCI API spec:
++
++```json
++{
++  "info": {
++    "description": "Custom description override"
++  },
++  "paths": {
++    "/custom-endpoint": {
++      "get": {
++        "summary": "Added custom endpoint"
++      }
++    }
++  }
++}
++```
++
++## Dependencies
++
++### Required
++
++- `@redocly/cli`: OpenAPI processing and doc generation
++- `jq`: JSON processing (system dependency for patching)
++- `curl`: API fetching (system dependency)
++
++### Development
++
++- Redocly CLI automatically rebuilds during development
++- File watching triggers rebuilds for both versions
++- Browser auto-reloads when documentation changes
++
++## Troubleshooting
++
++### Common Issues
++
++1. **Build failures**: Check network connectivity for v2 API fetching
++2. **Missing v1 docs**: Ensure `api-v1/` directory exists with content
++3. **Patch errors**: Validate `openapi-patch.json` syntax with `jq`
++4. **Navigation issues**: Check relative paths in Antora content files
++
++### Debug Commands
++
++```bash
++# Test API v2 endpoint accessibility
++curl -s https://circleci.com/api/v2/openapi.json | head
++
++# Validate patch file syntax
++jq . openapi-patch.json
++
++# Lint API specification
++npx @redocly/cli lint [path-to-spec]
++
++# Build API docs in isolation
++gulp build:api-docs
++```
++
++### Build Logs
++
++The build process provides detailed logging:
++
++- ✅ Success indicators for each pipeline step
++- ⚠️ Warnings for non-critical issues (continues build)
++- ❌ Errors that halt the build process
++- 📁 File operation details and sizes
++
++## Development Workflow
++
++### Adding New API Versions
++
++1. Create `buildApiV3()` function in `build-api-docs.js`
++2. Add directory creation logic
++3. Update main build orchestration
++4. Add navigation links to UI templates
++5. Update Antora content files
++
++### Modifying Build Pipeline
++
++1. Edit `gulp.d/tasks/build-api-docs.js`
++2. Test with `npm run build:api-docs`
++3. Verify output in `build/api/` directories
++4. Check integration with `npm run start:dev`
++
++### CI/CD Integration
++
++The build integrates with existing CircleCI pipeline:
++
++- No additional CI configuration needed
++- API docs build as part of main site build
++- Both versions deploy together to production
++- Automatic updates when CircleCI API changes (v2)
++
++## Performance Notes
++
++- **API v1**: Fast build (~1 second, file copying)
++- **API v2**: Slower build (~30 seconds, network + processing)
++- **Output sizes**: v1 maintains original assets, v2 generates 1.6MB HTML
++- **Caching**: v2 uses temporary files for efficient rebuilds
++- **Development**: Hot reload works for both versions
+
+From 33d986a07dfea1f88092a00c45d5b1f13421ba2d Mon Sep 17 00:00:00 2001
+From: auraecosystem <sandraisom@icloud.com>
+Date: Wed, 10 Jun 2026 03:10:47 +0100
+Subject: [PATCH 4/5] Create nextjs.yml
+
+Signed-off-by: auraecosystem <sandraisom@icloud.com>
+---
+ .github/workflows/nextjs.yml | 93 ++++++++++++++++++++++++++++++++++++
+ 1 file changed, 93 insertions(+)
+ create mode 100644 .github/workflows/nextjs.yml
+
+diff --git a/.github/workflows/nextjs.yml b/.github/workflows/nextjs.yml
+new file mode 100644
+index 0000000..d1837be
+--- /dev/null
++++ b/.github/workflows/nextjs.yml
+@@ -0,0 +1,93 @@
++# Sample workflow for building and deploying a Next.js site to GitHub Pages
++#
++# To get started with Next.js see: https://nextjs.org/docs/getting-started
++#
++name: Deploy Next.js site to Pages
++
++on:
++  # Runs on pushes targeting the default branch
++  push:
++    branches: ["main"]
++
++  # Allows you to run this workflow manually from the Actions tab
++  workflow_dispatch:
++
++# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
++permissions:
++  contents: read
++  pages: write
++  id-token: write
++
++# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
++# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
++concurrency:
++  group: "pages"
++  cancel-in-progress: false
++
++jobs:
++  # Build job
++  build:
++    runs-on: ubuntu-latest
++    steps:
++      - name: Checkout
++        uses: actions/checkout@v4
++      - name: Detect package manager
++        id: detect-package-manager
++        run: |
++          if [ -f "${{ github.workspace }}/yarn.lock" ]; then
++            echo "manager=yarn" >> $GITHUB_OUTPUT
++            echo "command=install" >> $GITHUB_OUTPUT
++            echo "runner=yarn" >> $GITHUB_OUTPUT
++            exit 0
++          elif [ -f "${{ github.workspace }}/package.json" ]; then
++            echo "manager=npm" >> $GITHUB_OUTPUT
++            echo "command=ci" >> $GITHUB_OUTPUT
++            echo "runner=npx --no-install" >> $GITHUB_OUTPUT
++            exit 0
++          else
++            echo "Unable to determine package manager"
++            exit 1
++          fi
++      - name: Setup Node
++        uses: actions/setup-node@v4
++        with:
++          node-version: "20"
++          cache: ${{ steps.detect-package-manager.outputs.manager }}
++      - name: Setup Pages
++        uses: actions/configure-pages@v5
++        with:
++          # Automatically inject basePath in your Next.js configuration file and disable
++          # server side image optimization (https://nextjs.org/docs/api-reference/next/image#unoptimized).
++          #
++          # You may remove this line if you want to manage the configuration yourself.
++          static_site_generator: next
++      - name: Restore cache
++        uses: actions/cache@v4
++        with:
++          path: |
++            .next/cache
++          # Generate a new cache whenever packages or source files change.
++          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
++          # If source files changed but packages didn't, rebuild from a prior cache.
++          restore-keys: |
++            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
++      - name: Install dependencies
++        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
++      - name: Build with Next.js
++        run: ${{ steps.detect-package-manager.outputs.runner }} next build
++      - name: Upload artifact
++        uses: actions/upload-pages-artifact@v3
++        with:
++          path: ./out
++
++  # Deployment job
++  deploy:
++    environment:
++      name: github-pages
++      url: ${{ steps.deployment.outputs.page_url }}
++    runs-on: ubuntu-latest
++    needs: build
++    steps:
++      - name: Deploy to GitHub Pages
++        id: deployment
++        uses: actions/deploy-pages@v5
+
+From 5476325cd823b0907288d9400bd641373b8e68a3 Mon Sep 17 00:00:00 2001
+From: auraecosystem <sandraisom@icloud.com>
+Date: Wed, 10 Jun 2026 03:13:13 +0100
+Subject: [PATCH 5/5] Create swarm.py
+
+Signed-off-by: auraecosystem <sandraisom@icloud.com>
+---
+ Node/swarm.py | 29 +++++++++++++++++++++++++++++
+ 1 file changed, 29 insertions(+)
+ create mode 100644 Node/swarm.py
+
+diff --git a/Node/swarm.py b/Node/swarm.py
+new file mode 100644
+index 0000000..32432bb
+--- /dev/null
++++ b/Node/swarm.py
+@@ -0,0 +1,29 @@
++import rclpy
++from rclpy.node import Node
++from sensor_msgs.msg import LaserScan
++import paho.mqtt.client as mqtt
++import json
++
++MQTT_BROKER = "127.0.0.1:80001"
++client = mqtt.Client("neurobot01")
++client.connect(MQTT_BROKER)
++
++class SwarmNode(Node):
++    def __init__(self):
++        super().__init__('swarm_node')
++        self.create_subscription(LaserScan, 'lidar', self.lidar_callback, 10)
++
++    def lidar_callback(self, msg):
++        # Publish sensor info to swarm
++        data = {"lidar": msg.ranges}
++        client.publish("neurobot/swarm", json.dumps(data))
++
++def main(args=None):
++    rclpy.init(args=args)
++    node = SwarmNode()
++    rclpy.spin(node)
++    node.destroy_node()
++    rclpy.shutdown()
++
++if __name__ == '__main__':
++    main()
