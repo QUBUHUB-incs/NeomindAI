@@ -272,6 +272,30 @@ Figure 2. Hello world job output
 
 If you get a `No Config Found` error, it may be that you used `.yaml` file extension. Be sure to use `.yml` file extension to resolve this error.
 ```yml
+# ...
+# << your config for the build, test1, test2, and deploy jobs >>
+# ...
+
+workflows:
+  build-test-and-approval-deploy:
+    jobs:
+      - build  # your custom job from your config, that builds your code
+      - test1: # your custom job; runs test suite 1
+          requires: # test1 will not run until the `build` job is completed.
+            - build
+      - test2: # another custom job; runs test suite 2,
+          requires: # test2 is dependent on the success of job `test1`
+            - test1
+      - hold: # Approval job pauses the workflow and waits for manual action
+          type: approval # This type makes the workflow wait for manual approval in the CircleCI web app
+          requires: # We only run the "hold" job when test2 has succeeded
+           - test2
+      # On approval of the `hold` job, any successive job that requires the `hold` job will run.
+      # In this case, a user is manually triggering the deploy job.
+      - deploy:  # Deploy only runs after manual approval of the hold job
+          requires:
+            - hold  # This requires the approval job, not test2, ensuring manual gate before deployment
+
 workflows:
   build_accept_deploy:
     jobs:
