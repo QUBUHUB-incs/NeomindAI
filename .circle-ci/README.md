@@ -81,6 +81,14 @@ workflows:
   my-workflow:
     jobs:
       - hello-job
+version: 2.1
+jobs:
+  my-job:
+    docker:
+      - image: cimg/base:current
+    resource_class: large.gen2
+    steps:
+      # ... steps for your job
 `````````
 
 **Windows:**
@@ -108,6 +116,14 @@ workflows:
   my-workflow:
     jobs:
       - hello-job
+version: 2.1
+jobs:
+  my-job:
+    docker:
+      - image: cimg/base:current
+    resource_class: large.gen2
+    steps:
+      # ... steps for your job
 `````````
 
 **GPU:**
