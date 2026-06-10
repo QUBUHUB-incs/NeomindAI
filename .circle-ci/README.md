@@ -271,6 +271,30 @@ workflows:
 Figure 2. Hello world job output
 
 If you get a `No Config Found` error, it may be that you used `.yaml` file extension. Be sure to use `.yml` file extension to resolve this error.
+```yml
+workflows:
+  build_accept_deploy:
+    jobs:
+      - build  # Single build job runs first
+      - acceptance_test_1:  # Fan-out: all acceptance tests run concurrently
+          requires:
+            - build
+      - acceptance_test_2:
+          requires:
+            - build
+      - acceptance_test_3:
+          requires:
+            - build
+      - acceptance_test_4:
+          requires:
+            - build
+      - deploy:  # Fan-in: deploy waits for all acceptance tests to succeed
+          requires:
+            - acceptance_test_1
+            - acceptance_test_2
+            - acceptance_test_3
+            - acceptance_test_4
+  ```          
 
 > ## Next steps
 
