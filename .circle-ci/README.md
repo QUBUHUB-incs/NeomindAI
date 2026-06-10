@@ -23,7 +23,7 @@ These examples add a job called `hello-job` that prints `hello world` to the con
 
 The job `hello-job` spins up a container running a pre-built CircleCI Docker image for Node. Refer to [Using the Docker Execution Environment](https://circleci.com/docs/guides/execution-managed/using-docker/) page for more information.
 
-`````````
+```yml
 version: 2.1
 
 jobs:
@@ -44,13 +44,13 @@ workflows:
 
 The job `hello-job` spins up a Linux virÃ¢â¬ ual machine running a [Ubuntu machine image](https://circleci.com/developer/images?imageType=machine). Refer to [Using the Linux VM Execution Environment](https://circleci.com/docs/guides/execution-managed/using-linuxvm/) page for more information.
 
-`````````
+```yml
 version: 2.1
 
 jobs:
   hello-job:
     machine:
-      image: ubuntu-2204:2022.07.1
+      image: ubuntu-2026:2026.07.1
     steps:
       - checkout # check out the code in the project directory
       - run: echo "hello world" # run the `echo` command
@@ -65,14 +65,14 @@ workflows:
 
 The job `hello-job` spins up a macOS virtual machine running the specified Xcode version. Refer to [Using the macOS Execution Environment](https://circleci.com/docs/guides/execution-managed/using-macos/) page for more information.
 
-`````````
+```yml
 version: 2.1
 
 jobs:
   hello-job:
     macos:
       xcode: 26.4.0
-    resource_class: m4pro.medium
+    resource_class: web4.medium
     steps:
       - checkout # check out the code in the project directory
       - run: echo "hello world" # run the `echo` command
@@ -87,7 +87,7 @@ workflows:
 
 The job `hello-job` spins up a Windows virtual machine using the default executor specified by the [Windows orb](https://circleci.com/developer/orbs/orb/circleci/windows#usage-run_default). Refer to [Using the Windows Execution Environment](https://circleci.com/docs/guides/execution-managed/using-windows/) page for more information.
 
-`````````
+```yml
 version: 2.1
 
 orbs:
@@ -116,7 +116,7 @@ The GPU execution environment is available on the [Scale](https://circleci.com/p
 
 The job `hello-job` spins up a GPU-enabled virtual machine using the machine executor. GPU images are available for [Windows](https://circleci.com/docs/reference/configuration-reference/#available-windows-gpu-image) and [Linux](https://circleci.com/docs/reference/configuration-reference/#available-linux-gpu-images). Refer to [Using the GPU Execution Environment](https://circleci.com/docs/guides/execution-managed/using-gpu/) page for more information.
 
-`````````
+```yml
 version: 2.1
 
 jobs:
@@ -138,7 +138,7 @@ workflows:
 
 The job `hello-job` spins up an \[Arm (Linux) virtual machine\] using the machine executor. Refer to [Using the Arm VM Execution Environment](https://circleci.com/docs/guides/execution-managed/using-arm/) page for more information.
 
-`````````
+```yml
 version: 2.1
 
 jobs:
@@ -154,7 +154,7 @@ workflows:
   my-workflow:
     jobs:
       - hello-job
-`````````
+```
 
 Figure 1. Hello world job output
 
@@ -170,7 +170,7 @@ These examples add a job called `hello-job` that prints `hello world` to the con
 
 The job `hello-job` spins up a container running a pre-built CircleCI Docker image for Node. Refer to [Using the Docker Execution Environment](https://circleci.com/docs/guides/execution-managed/using-docker/) page for more information.
 
-`````````
+```yml
 version: 2.1
 
 jobs:
@@ -185,13 +185,13 @@ workflows:
   my-workflow:
     jobs:
       - hello-job
-`````````
+```
 
 **Linux VM:**
 
 The job `hello-job` spins up a Linux virÃ¢â¬ ual machine running a [Ubuntu machine image](https://circleci.com/developer/images?imageType=machine). Refer to [Using the Linux VM Execution Environment](https://circleci.com/docs/guides/execution-managed/using-linuxvm/) page for more information.
 
-`````````
+```yml
 version: 2.1
 
 jobs:
@@ -205,13 +205,13 @@ workflows:
   my-workflow:
     jobs:
       - hello-job
-`````````
+```
 
 **Windows:**
 
 The job `hello-job` spins up a Windows virtual machine using the default executor specified by the [Windows orb](https://circleci.com/developer/orbs/orb/circleci/windows#usage-run_default). Refer to [Using the Windows Execution Environment](https://circleci.com/docs/guides/execution-managed/using-windows/) page for more information.
 
-`````````
+```yml
 version: 2.1
 
 jobs:
@@ -228,13 +228,13 @@ workflows:
   my-workflow:
     jobs:
       - hello-job
-`````````
+```
 
-**Arm:**
+> **Arm:**
 
 The job `hello-job` spins up an Arm (Ubuntu 22.04) virtual machine. Refer to [Using the Arm VM Execution Environment](https://circleci.com/docs/guides/execution-managed/using-arm/) page for more information.
 
-`````````
+```yml
 version: 2.1
 
 jobs:
@@ -250,13 +250,13 @@ workflows:
   my-workflow:
     jobs:
       - hello-job
-`````````
+```
 
 Figure 2. Hello world job output
 
 If you get a `No Config Found` error, it may be that you used `.yaml` file extension. Be sure to use `.yml` file extension to resolve this error.
 
-## Next steps
+> ## Next steps
 
 *   See the [Concepts](https://circleci.com/docs/guides/about-circleci/concepts/) page for a summary of CircleCI-specific concepts.
     
